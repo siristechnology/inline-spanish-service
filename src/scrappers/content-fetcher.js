@@ -8,13 +8,13 @@ export default {
 		let { links } = await fetchLinks(config)
 		links = links.slice(0, 10)
 
-		let artciles = []
+		let articles = []
 		for (const link of links) {
-			const artcile = await this.scrapeArticleLink(link)
-			artciles.push(artcile)
+			const article = await this.scrapeArticleLink(link)
+			articles.push(article)
 		}
 
-		return { articles: artciles }
+		return { articles: articles }
 	},
 
 	scrapeArticleLink: async function(url) {
