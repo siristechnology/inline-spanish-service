@@ -1,5 +1,6 @@
 import axios from 'axios'
 import cheerio from 'cheerio'
+import URL from 'url'
 
 export default async config => {
 	try {
@@ -16,10 +17,15 @@ export default async config => {
 
 		let $ = cheerio.load(response.data)
 
-		let links = []
+		const baseUrl = `https://${URL.parse(config.url).host}`
 
+		let links = []
 		$(config['links-selector']).each(function(index, element) {
-			const link = $(element).attr('href')
+			let link = $(element).attr('href')
+
+			if (!link.startsWith('https://')) {
+				link = `${baseUrl}${link}`
+			}
 			links.push(link)
 		})
 
