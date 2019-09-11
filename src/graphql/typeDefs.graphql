@@ -1,13 +1,14 @@
 type Article {
 	title: String!
-	shortDescription: String
+	url: String
+	lead_image_url: String
+	excerpt: String
 	content: String
-	link: String
-	imageLink: String
 	source: Source
-	publishedDate: String
-	createdDate: String
-	modifiedDate: String
+	author: String
+	date_published: String
+	date_created: String
+	date_modified: String
 }
 
 input ArticleCriteria {
