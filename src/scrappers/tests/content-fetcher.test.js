@@ -6,8 +6,6 @@ describe('content-fetcher', () => {
 	it('fetchArticles should fetch articles successfully', async () => {
 		const { articles } = await ContentFetcher.fetchArticles()
 
-		console.log('Printing articles', articles)
-
 		expect(articles.length).toBeGreaterThan(5)
 	})
 
