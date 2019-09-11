@@ -5,8 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"preinstall": "node tools/preinstall-script.js",
-		"start:server": "netlify-lambda serve functions -p 8080",
-		"build:server": "netlify-lambda build functions",
+		"start": "netlify-lambda serve functions -p 8080",
+		"build": "netlify-lambda build functions",
 		"format": "prettier --write \"src/**/*.js\"",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
