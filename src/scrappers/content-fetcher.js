@@ -1,5 +1,6 @@
 import fetchLinks from './link-crawler'
 import Mercury from '@postlight/mercury-parser'
+import htmlToText from 'html-to-text'
 
 export default {
 	fetchArticles: async function() {
@@ -20,7 +21,7 @@ export default {
 		return new Promise((resolve, reject) => {
 			Mercury.parse(url)
 				.then(result => {
-					console.log('Printing result', result)
+					result.contentText = htmlToText.fromString(result.content)
 					resolve(result)
 				})
 				.catch(reason => {
