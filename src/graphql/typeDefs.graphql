@@ -1,0 +1,28 @@
+type Article {
+	title: String!
+	shortDescription: String
+	content: String
+	link: String
+	imageLink: String
+	source: Source
+	publishedDate: String
+	createdDate: String
+	modifiedDate: String
+}
+
+input ArticleCriteria {
+	lastArticleId: String
+	lastQueryDate: String
+}
+
+type Source {
+	_id: String!
+	name: String
+	url: String
+	link: String
+	logoLink: String
+}
+
+type Query {
+	fetchArticles(criteria: ArticleCriteria): [Article]!
+}
