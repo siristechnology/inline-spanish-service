@@ -1,0 +1,4 @@
+{
+	"url": "https://medium.com/topic/popular",
+	"links-selector": "#root section section div h3>a"
+}
