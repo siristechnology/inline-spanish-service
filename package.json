@@ -8,33 +8,36 @@
 		"start": "netlify-lambda serve src/functions -p 8080",
 		"build": "netlify-lambda build src/functions",
 		"format": "prettier --write \"src/**/*.js\"",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "jest"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/syuraj/inline-spanish-service.git"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "syuraj@gmail.com",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/syuraj/inline-spanish-service/issues"
 	},
 	"homepage": "https://github.com/syuraj/inline-spanish-service#readme",
-	"devDependencies": {
-		"babel-eslint": "10.0.3",
-		"babel-jest": "24.9.0",
-		"eslint": "6.3.0",
-		"eslint-config-prettier": "6.3.0",
-		"eslint-plugin-prettier": "3.1.0",
-		"netlify-lambda": "1.6.3",
-		"prettier": "1.18.2"
-	},
 	"dependencies": {
 		"@postlight/mercury-parser": "2.1.1",
 		"axios": "0.19.0",
 		"cheerio": "1.0.0-rc.3",
 		"dotenv": "8.1.0",
 		"google-translate": "2.3.0"
+	},
+	"devDependencies": {
+		"@babel/core": "7.6.0",
+		"@babel/preset-env": "7.6.0",
+		"babel-eslint": "10.0.3",
+		"babel-jest": "24.9.0",
+		"eslint": "6.3.0",
+		"eslint-config-prettier": "6.3.0",
+		"eslint-plugin-prettier": "3.1.0",
+		"jest": "24.9.0",
+		"netlify-lambda": "1.6.3",
+		"prettier": "1.18.2"
 	}
 }
