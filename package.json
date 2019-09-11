@@ -1,0 +1,33 @@
+{
+	"name": "inline-spanish-service",
+	"version": "1.0.0",
+	"description": "A backend service for inline-spanish mobile app",
+	"main": "index.js",
+	"scripts": {
+		"preinstall": "node tools/preinstall-script.js",
+		"start:server": "netlify-lambda serve functions -p 8080",
+		"build:server": "netlify-lambda build functions",
+		"format": "prettier --write \"src/**/*.js\"",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/syuraj/inline-spanish-service.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/syuraj/inline-spanish-service/issues"
+	},
+	"homepage": "https://github.com/syuraj/inline-spanish-service#readme",
+	"devDependencies": {
+		"babel-eslint": "10.0.3",
+		"babel-jest": "24.9.0",
+		"eslint": "6.3.0",
+		"eslint-config-prettier": "6.3.0",
+		"eslint-plugin-prettier": "3.1.0",
+		"netlify-lambda": "1.6.3",
+		"prettier": "1.18.2"
+	}
+}
