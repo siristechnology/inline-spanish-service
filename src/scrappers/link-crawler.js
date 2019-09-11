@@ -18,8 +18,6 @@ export default async config => {
 
 		let links = []
 
-		console.log('Printing config["links-selector"]', config['links-selector'])
-
 		$(config['links-selector']).each(function(index, element) {
 			const link = $(element).attr('href')
 			links.push(link)
