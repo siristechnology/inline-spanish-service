@@ -14,8 +14,9 @@ export default {
 					console.log('Printing article', string)
 					console.log('Printing translation', translation)
 					reject('Translation failed')
+				} else {
+					resolve(translation.translatedText)
 				}
-				resolve(translation.translatedText)
 			})
 		})
 	}
