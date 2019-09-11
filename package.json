@@ -28,9 +28,11 @@
 		"bufferutil": "4.0.1",
 		"cheerio": "1.0.0-rc.3",
 		"dotenv": "8.1.0",
+		"encoding": "0.1.12",
 		"google-translate": "2.3.0",
 		"graphql": "14.5.4",
 		"html-to-text": "5.1.1",
+		"request": "2.79.0",
 		"utf-8-validate": "5.0.2"
 	},
 	"devDependencies": {

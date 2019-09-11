@@ -8,7 +8,8 @@ export default {
 		let translatedArticles = []
 
 		for (const article of articles) {
-			const translatedContent = await GoogleTranslate.translateArticle(article.contentText, 'es')
+			const shortenedText = article.contentText.slice(0,5000)
+			const translatedContent = await GoogleTranslate.translateArticle(shortenedText, 'es')
 
 			const translatedArticle = {
 				title: article.title,
