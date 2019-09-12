@@ -8,9 +8,15 @@ export default {
 	},
 
 	googleTranslate: async function(string, language) {
-		return new Promise(resolve => {
-			GoogleTranslate.translate(string, language, function(err, translation) {
-				resolve(translation.translatedText)
+		return new Promise((resolve, reject) => {
+			GoogleTranslate.translate(string.slice(0, 5000), language, function(err, translation) {
+				if (!translation) {
+					console.log('Printing article', string)
+					console.log('Printing translation', translation)
+					reject('Translation failed')
+				} else {
+					resolve(translation.translatedText)
+				}
 			})
 		})
 	}
