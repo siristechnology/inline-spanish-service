@@ -16,6 +16,8 @@ variables:
 
     vmImageName: 'ubuntu-latest'
 
+    GOOGLE_TRANSLATE_API_KEY: $(GOOGLE_TRANSLATE_API_KEY)
+
 stages:
     - stage: Build
       displayName: Build stage
@@ -34,7 +36,7 @@ stages:
                 - script: |
                       yarn
                       yarn test
-                  displayName: 'YARN install & test'
+                  displayName: 'YARN build'
 
                 - task: ArchiveFiles@2
                   displayName: 'Archive files'
