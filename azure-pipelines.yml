@@ -34,6 +34,8 @@ stages:
                 - script: |
                       yarn
                       yarn test
+                  env:
+                      GOOGLE_TRANSLATE_API_KEY: $(GOOGLE_TRANSLATE_API_KEY)
                   displayName: 'YARN build'
 
                 - task: ArchiveFiles@2
@@ -69,6 +71,3 @@ stages:
                                   appType: functionAppLinux
                                   appName: $(functionAppName)
                                   package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
-
-env:
-    GOOGLE_TRANSLATE_API_KEY: $(GOOGLE_TRANSLATE_API_KEY)
