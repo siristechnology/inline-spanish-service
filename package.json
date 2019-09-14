@@ -1,12 +1,11 @@
 {
 	"name": "inline-spanish-service",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A backend service for inline-spanish mobile app",
 	"main": "index.js",
 	"scripts": {
 		"preinstall": "node tools/preinstall-script.js",
 		"start": "func start",
-		"publish": "func azure functionapp publish",
 		"format": "prettier --write \"src/**/*.js\"",
 		"test": "jest"
 	},
@@ -36,9 +35,9 @@
 		"utf-8-validate": "5.0.2"
 	},
 	"devDependencies": {
-		"apollo-server-azure-functions": "2.9.3",
 		"@babel/core": "7.6.0",
 		"@babel/preset-env": "7.6.0",
+		"apollo-server-azure-functions": "2.9.3",
 		"babel-eslint": "10.0.3",
 		"babel-jest": "24.9.0",
 		"eslint": "6.3.0",
