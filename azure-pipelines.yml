@@ -8,9 +8,11 @@ trigger:
 
 variables:
     # Azure Resource Manager connection created during pipeline creation
-    azureSubscription: '522d30d2-7533-4b2c-b3b6-98f527cd9842'
+    azureSubscription: '1e945fce-64c9-44ed-b04d-f2988813d3e1'
 
     functionAppName: 'inline-spanish-service-qa'
+
+    environmentName: 'inline-spanish-service-qa'
 
     vmImageName: 'ubuntu-latest'
 
@@ -37,10 +39,9 @@ stages:
                   displayName: 'Build extensions'
 
                 - script: |
-                      npm install
-                      npm run build --if-present
-                      npm run test --if-present
-                  displayName: 'Prepare binaries'
+                      yarn
+                      yarn test
+                  displayName: 'YARN install & test'
 
                 - task: ArchiveFiles@2
                   displayName: 'Archive files'
@@ -57,11 +58,11 @@ stages:
     - stage: Deploy
       displayName: Deploy stage
       dependsOn: Build
-      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+      condition: succeeded()
       jobs:
           - deployment: Deploy
             displayName: Deploy
-            environment: 'development'
+            environment: $(environmentName)
             pool:
                 vmImage: $(vmImageName)
             strategy:
@@ -69,7 +70,7 @@ stages:
                     deploy:
                         steps:
                             - task: AzureFunctionApp@1
-                              displayName: 'Azure Functions App Deploy: '
+                              displayName: 'Azure Functions App Deploy: inline-spanish-service-qa'
                               inputs:
                                   azureSubscription: '$(azureSubscription)'
                                   appType: functionAppLinux
