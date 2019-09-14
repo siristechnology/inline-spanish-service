@@ -1,8 +1,8 @@
-import axios from 'axios'
-import cheerio from 'cheerio'
-import URL from 'url'
+const axios = require('axios')
+const cheerio = require('cheerio')
+const URL = require('url')
 
-export default async config => {
+module.exports = async function(config) {
 	try {
 		const response = await axios({
 			url: config.url,

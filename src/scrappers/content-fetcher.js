@@ -1,8 +1,8 @@
-import fetchLinks from './link-crawler'
-import Mercury from '@postlight/mercury-parser'
-import htmlToText from 'html-to-text'
+const fetchLinks = require('./link-crawler')
+const Mercury = require('@postlight/mercury-parser')
+const htmlToText = require('html-to-text')
 
-export default {
+module.exports = {
 	fetchArticles: async function() {
 		const config = this.getConfig('medium')
 		let { links } = await fetchLinks(config)
