@@ -32,13 +32,6 @@ stages:
                   displayName: 'Install Node.js'
 
                 - script: |
-                      if [ -f extensions.csproj ]
-                      then
-                          dotnet build extensions.csproj --runtime ubuntu.16.04-x64 --output ./bin
-                      fi
-                  displayName: 'Build extensions'
-
-                - script: |
                       yarn
                       yarn test
                   displayName: 'YARN install & test'
