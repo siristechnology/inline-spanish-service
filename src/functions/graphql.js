@@ -1,9 +1,9 @@
 require('dotenv').config()
 import { ApolloServer } from 'apollo-server-lambda'
 import { resolver } from '../graphql/resolvers'
-import fs from 'fs'
+import typeDefs from '../graphql/typeDefs.graphql'
 
-const typeDefs = fs.readFileSync('./src/graphql/typeDefs.graphql').toString('utf8')
+// const typeDefs = fs.readFileSync('./src/graphql/typeDefs.graphql').toString('utf8')
 
 const server = new ApolloServer({
 	typeDefs: typeDefs,
