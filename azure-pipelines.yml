@@ -16,8 +16,6 @@ variables:
 
     vmImageName: 'ubuntu-latest'
 
-    GOOGLE_TRANSLATE_API_KEY: $(GOOGLE_TRANSLATE_API_KEY)
-
 stages:
     - stage: Build
       displayName: Build stage
@@ -71,3 +69,6 @@ stages:
                                   appType: functionAppLinux
                                   appName: $(functionAppName)
                                   package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+
+env:
+    GOOGLE_TRANSLATE_API_KEY: $(GOOGLE_TRANSLATE_API_KEY)
