@@ -1,6 +1,6 @@
-import TranslatedContentFetcher from '../scrappers/translated-content-fetcher'
+const TranslatedContentFetcher = require('../scrappers/translated-content-fetcher')
 
-const resolver = {
+module.exports = {
 	Query: {
 		fetchArticles: async (parent, args) => {
 			args.criteria = args.criteria || {}
@@ -11,5 +11,3 @@ const resolver = {
 		}
 	}
 }
-
-export { resolver }

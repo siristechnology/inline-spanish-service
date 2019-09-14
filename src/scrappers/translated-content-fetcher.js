@@ -1,14 +1,14 @@
-import ContentFetcher from '../scrappers/content-fetcher'
-import GoogleTranslate from '../translate/google-translate'
+const ContentFetcher = require('../scrappers/content-fetcher')
+const GoogleTranslate = require('../translate/google-translate')
 
-export default {
+module.exports = {
 	fetchTranslatedArticles: async function() {
 		const { articles } = await ContentFetcher.fetchArticles()
 
 		let translatedArticles = []
 
 		for (const article of articles) {
-			const shortenedText = article.contentText.slice(0,5000)
+			const shortenedText = article.contentText.slice(0, 5000)
 			const translatedContent = await GoogleTranslate.translateArticle(shortenedText, 'es')
 
 			const translatedArticle = {
