@@ -50,7 +50,7 @@ describe('article-db-service', () => {
 		const articles = [
 			{
 				title: 'How to Be a Good Senior Developer - Better Programming',
-				url: 'https://medium.com/better-programming/how-to-be-a-good-senior-developer-958948e02ada',
+				url: `url${Math.random()}`,
 				lead_image_url: 'https://miro.medium.com/max/1200/1*BwbpJq7HMHx7dF-NTFEQ2Q.jpeg',
 				excerpt: 'It’s not what you do-it’s how you do it',
 				author: 'Ravi Shankar Rajan',
@@ -60,8 +60,7 @@ describe('article-db-service', () => {
 			},
 			{
 				title: 'How Britain Plunged Into Its Worst Constitutional Crisis in 400 Years',
-				url:
-					'https://gen.medium.com/how-britain-plunged-into-its-worst-constitutional-crisis-in-400-years-11ec694264b8',
+				url: `url${Math.random()}`,
 				lead_image_url: 'https://miro.medium.com/focal/1200/632/50/51/1*0WgLa4rRRs4kwjGjB65K2w.jpeg',
 				excerpt:
 					'Boris Johnson’s efforts to ram a no-deal Brexit through have unleashed a massive fight over who holds political power in the U.K.',
