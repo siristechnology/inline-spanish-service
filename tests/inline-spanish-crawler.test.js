@@ -13,7 +13,9 @@ describe('inline-spanish-crawler', () => {
 			.spyOn(TranslatedContentFetcher, 'fetchTranslatedArticles')
 			.mockImplementation(() => articles)
 
-		const spySaveArticles = jest.spyOn(articleDbService, 'saveArticles').mockImplementation(() => {})
+		const spySaveArticles = jest.spyOn(articleDbService, 'saveArticles').mockImplementation(() => {
+			return { catch: jest.fn() }
+		})
 
 		await InlineSpanishCrawler(console, {})
 
