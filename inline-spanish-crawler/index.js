@@ -10,7 +10,9 @@ module.exports = async function(context, myTimer) {
 
 	const { articles } = await TranslatedContentFetcher.fetchTranslatedArticles()
 
-	await articleDbService.saveArticles(articles)
+	await articleDbService
+		.saveArticles(articles, context)
+		.catch(reason => context.log('printing save failure reason', reason))
 
 	context.log('JavaScript timer trigger function ran!', timeStamp)
 }

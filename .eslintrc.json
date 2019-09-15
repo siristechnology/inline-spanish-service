@@ -25,6 +25,7 @@
 			{
 				"code": 120,
 				"ignoreComments": true,
+				"ignoreStrings": true,
 				"ignoreUrls": true
 			}
 		],
