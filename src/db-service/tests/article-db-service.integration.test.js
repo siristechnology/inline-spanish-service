@@ -9,7 +9,7 @@ describe('article-db-service', () => {
 	it('saveArticle should save an article successfully.', async () => {
 		const article = {
 			title: 'dummy title',
-			url: 'url',
+			url: `url${Math.random()}`,
 			content: 'content'
 		}
 		const articlesSaved = await articleDbService.saveArticles([article])
@@ -18,62 +18,66 @@ describe('article-db-service', () => {
 		expect(articlesSaved[0].date_created).not.toBeUndefined()
 		expect(articlesSaved[0].date_modified).not.toBeUndefined()
 
-		await articleDbService.deleteArticles({ _id: articlesSaved[0]._id })
+		await await articleDbService.deleteArticles([articlesSaved[0]._id])
 	})
 
-	it('saveArticle should not save publishedDate by default.', async () => {
+	it('saveArticle should not save date_published by default.', async () => {
 		const article = {
 			title: 'dummy title',
-			link: 'link',
-			imageLink: 'imageLink'
+			url: `url${Math.random()}`,
+			content: 'content'
 		}
 		const articlesSaved = await articleDbService.saveArticles([article])
 
-		expect(articlesSaved[0].publishedDate).toBeUndefined()
+		expect(articlesSaved[0].date_published).toBeUndefined()
 
-		await articleDbService.deleteArticles({ _id: articlesSaved[0]._id })
+		await await articleDbService.deleteArticles([articlesSaved[0]._id])
 	})
 
-	it('saveArticle should save given publishedDate.', async () => {
+	it('saveArticle should save given date_published.', async () => {
 		const date1 = new Date(2013, 4, 30, 16, 5)
-		const article = { title: 'dummy title', publishedDate: date1 }
-		const articlesSaved = await articleDbService.saveArticles([article])
-
-		expect(articlesSaved[0].publishedDate).to.equal(date1)
-	})
-
-	it('saveArticles() should save source too.', async () => {
-		const date1 = new Date(2013, 4, 30, 16, 5)
-		const sources = await articleDbService.getAllSources()
 		const article = {
 			title: 'dummy title',
-			publishedDate: date1,
-			source: sources[0]._id
+			url: `url${Math.random()}`,
+			content: 'content',
+			date_published: date1
 		}
+
 		const articlesSaved = await articleDbService.saveArticles([article])
 
-		expect(articlesSaved[0].source._id).to.equal(sources[0]._id)
+		expect(articlesSaved[0].date_published).toEqual(date1)
+
+		await articleDbService.deleteArticles([articlesSaved[0]._id])
 	})
 
-	it('saveArticles() should save multile sources', async () => {
-		const article1 = { title: 'dummy title' }
-		const article2 = { title: 'dummy title 2' }
+	it('saveArticles should save multile articles', async () => {
+		const article1 = {
+			title: 'dummy title',
+			url: `url${Math.random()}`,
+			content: 'content'
+		}
+		const article2 = {
+			title: 'dummy title',
+			url: `url${Math.random()}`,
+			content: 'content'
+		}
 		const articlesSaved = await articleDbService.saveArticles([article1, article2])
 
-		expect(articlesSaved[1]).to.not.be.undefined
+		expect(articlesSaved[0]).toBeDefined()
+		expect(articlesSaved[1]).toBeDefined()
+
+		await articleDbService.deleteArticles([articlesSaved[0]._id, articlesSaved[1]._id])
 	})
 })
 
-describe('newsDbService', () => {
-	it('getArticles() should fetch news from mongodb.', async () => {
+describe('article-db-service', () => {
+	it('getArticles should fetch news from mongodb.', async () => {
+		const article1 = { title: 'dummy title', url: `url${Math.random()}`, content: 'content' }
+		const articlesSaved = await articleDbService.saveArticles([article1])
+
 		const articles = await articleDbService.getArticles()
-		expect(articles).to.have.length.greaterThan(0)
-	})
-})
+		expect(articles.length).toBeGreaterThan(0)
 
-describe('newsDbService', () => {
-	it('getAllSources() should all sources.', async () => {
-		const sources = await articleDbService.getAllSources()
-		expect(sources).to.have.length.greaterThan(1)
+		await articleDbService.deleteArticles([articlesSaved[0]._id])
 	})
 })

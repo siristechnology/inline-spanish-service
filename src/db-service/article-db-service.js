@@ -14,8 +14,8 @@ module.exports = {
 		return null
 	},
 
-	deleteArticles: async conditions => {
-		return await Article.deleteMany(conditions)
+	deleteArticles: async _ids => {
+		return await Article.deleteMany({ _id: { $in: _ids } })
 	},
 
 	getArticles: async () => {
