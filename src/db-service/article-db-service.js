@@ -1,3 +1,4 @@
+require('dotenv').config()
 const mongoose = require('mongoose')
 const { Article } = require('./mongooseSchema')
 
@@ -23,8 +24,9 @@ module.exports = {
 	},
 
 	getArticles: async () => {
-		const newsArticles = await Article.find()
-		return newsArticles
+		return await Article.find()
+			.sort({ _id: -1 })
+			.limit(50)
 	},
 
 	doesExist: async newslink => {

@@ -1,9 +1,10 @@
 type Article {
+	_id: String!
 	title: String!
-	url: String
+	url: String!
 	lead_image_url: String
 	excerpt: String
-	content: String
+	content: String!
 	source: Source
 	author: String
 	date_published: String
