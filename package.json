@@ -7,7 +7,7 @@
 		"preinstall": "node tools/preinstall-script.js",
 		"start": "func start",
 		"format": "prettier --write \"src/**/*.js\"",
-		"test": "jest"
+		"test": "jest --testMatch '**/?(*.)+(spec|test).[tj]s?(x)' "
 	},
 	"repository": {
 		"type": "git",
