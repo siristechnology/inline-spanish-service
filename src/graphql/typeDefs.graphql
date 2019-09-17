@@ -5,6 +5,8 @@ type Article {
 	lead_image_url: String
 	excerpt: String
 	content: String!
+	original_content: [String]!
+	translated_content: [String]!
 	source: Source
 	author: String
 	date_published: String
