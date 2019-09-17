@@ -4,11 +4,13 @@ const Schema = mongoose.Schema
 const Article = mongoose.model(
 	'Article',
 	new Schema({
-		title: { type: String, required: true },
+		title: { type: String, required: true, unique: true },
 		url: { type: String, required: true, unique: true },
 		lead_image_url: String,
 		excerpt: String,
 		content: { type: String, required: true },
+		original_content: { type: [String], required: true },
+		translated_content: { type: [String], required: true },
 		source: String,
 		author: String,
 		date_published: Date,
