@@ -1,23 +1,36 @@
 require('dotenv').config()
-var GoogleTranslate = require('google-translate')(process.env.GOOGLE_TRANSLATE_API_KEY)
+const { Translate } = require('@google-cloud/translate')
 
 module.exports = {
-	translateArticle: async function(string, language) {
-		const translatedText = await this.googleTranslate(string, language)
-		return string + ' \n' + translatedText
+	translateArticle: async function(content, language) {
+		const strippedContent = content.replace(/\[[^\]]*\]/g, '').slice(0, 5000)
+		const translatedText = await this.googleTranslate(strippedContent, language)
+
+		const result = {
+			originalContent: this.breakLongTextIntoSentences(strippedContent),
+			translatedContent: this.breakLongTextIntoSentences(translatedText)
+		}
+		return result
 	},
 
-	googleTranslate: async function(string, language) {
+	googleTranslate: async function(content, language) {
 		return new Promise((resolve, reject) => {
-			GoogleTranslate.translate(string.slice(0, 5000), language, function(err, translation) {
+			const translator = new Translate({ key: process.env.GOOGLE_TRANSLATE_API_KEY })
+
+			translator.translate(content.slice(0, 5000), language, function(err, translation) {
 				if (!translation) {
-					console.log('Printing article', string)
+					console.log('Printing err', err)
+					console.log('Printing article', content)
 					console.log('Printing translation', translation)
 					reject('Translation failed')
 				} else {
-					resolve(translation.translatedText)
+					resolve(translation)
 				}
 			})
 		})
+	},
+
+	breakLongTextIntoSentences: function(longText) {
+		return longText.split(/[\n]+/)
 	}
 }
