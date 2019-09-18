@@ -3,14 +3,17 @@ const { Translate } = require('@google-cloud/translate')
 
 module.exports = {
 	translateArticle: async function(content, language) {
-		const strippedContent = content.replace(/\[[^\]]*\]/g, '').slice(0, 5000)
-		const translatedText = await this.googleTranslate(strippedContent, language)
+		try {
+			const translatedText = await this.googleTranslate(content, language)
 
-		const result = {
-			originalContent: this.breakLongTextIntoSentences(strippedContent),
-			translatedContent: this.breakLongTextIntoSentences(translatedText)
+			const result = {
+				originalContent: this.breakLongTextIntoSentences(content),
+				translatedContent: this.breakLongTextIntoSentences(translatedText)
+			}
+			return result
+		} catch (err) {
+			return { status: 'fail', message: err.message }
 		}
-		return result
 	},
 
 	googleTranslate: async function(content, language) {
