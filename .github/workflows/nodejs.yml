@@ -22,5 +22,3 @@ jobs:
                   yarn test
               env:
                   CI: true
-                  GOOGLE_TRANSLATE_API_KEY: ${{ secrets.GOOGLE_TRANSLATE_API_KEY }}
-                  DATABASE_URL: ${{ secrets.DATABASE_URL }}
