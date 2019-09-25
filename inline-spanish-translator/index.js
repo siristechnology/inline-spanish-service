@@ -8,13 +8,16 @@ module.exports = async function(context, myTimer) {
 		context.log('JavaScript is running late!')
 	}
 
-	const { articles } = await ArticleDbService.getArticles({ status: 'scrapped' })
+	const articles = await ArticleDbService.getArticles({ status: 'scraped' })
 
-	if (articles.length > 0) {
-		await ArticleTranslator.translateArticles(articles)
-		await ArticleDbService.saveArticles(articles).catch(reason =>
-			context.log('printing save failure reason', reason)
-		)
+	if (articles && articles.length > 0) {
+		const { articles: translatedArticles } = await ArticleTranslator.translateArticles(articles.slice(0, 1))
+
+		console.log('Printing articles before saving', articles)
+
+		// await ArticleDbService.saveArticles(translatedArticles).catch(reason =>
+		// 	context.log('printing save failure reason', reason)
+		// )
 	}
 
 	context.log('JavaScript timer trigger function ran!', timeStamp)

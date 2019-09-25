@@ -7,8 +7,8 @@ jest.mock('../../src/scrappers/content-fetcher')
 jest.mock('../../src/db-service/article-db-service')
 jest.mock('mongoose')
 
-describe('inline-spanish-crawler', () => {
-	it('function should call TranslatedContentFetcher and articleDbService', async () => {
+describe('inline-spanish-crawler unit', () => {
+	it('function should call ContentFetcher and articleDbService', async () => {
 		const articles = {}
 
 		const spyFetchArticles = jest.spyOn(ContentFetcher, 'fetchArticles').mockImplementation(() => articles)
