@@ -1,4 +1,4 @@
-const TranslatedContentFetcher = require('../src/scrappers/translated-content-fetcher')
+const ContentFetcher = require('../src/scrappers/content-fetcher')
 const articleDbService = require('../src/db-service/article-db-service')
 
 module.exports = async function(context, myTimer) {
@@ -8,7 +8,7 @@ module.exports = async function(context, myTimer) {
 		context.log('JavaScript is running late!')
 	}
 
-	const { articles } = await TranslatedContentFetcher.fetchTranslatedArticles()
+	const { articles } = await ContentFetcher.fetchArticles()
 
 	await articleDbService
 		.saveArticles(articles, context)

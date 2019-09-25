@@ -11,6 +11,8 @@ module.exports = {
 		let articles = []
 		for (const link of links) {
 			const article = await this.scrapeArticleLink(link)
+			article.status = 'scraped'
+
 			articles.push(article)
 		}
 

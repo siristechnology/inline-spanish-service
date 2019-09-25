@@ -23,8 +23,8 @@ module.exports = {
 		return await Article.deleteMany({ _id: { $in: _ids } })
 	},
 
-	getArticles: async () => {
-		return await Article.find()
+	getArticles: async conditions => {
+		return await Article.find(conditions)
 			.sort({ _id: -1 })
 			.limit(50)
 	},
