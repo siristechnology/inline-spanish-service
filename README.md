@@ -1,5 +1,7 @@
 # Inline Spanish Service backend
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/siristechnology/inline-spanish-service.svg)](https://greenkeeper.io/)
+
 Backend for Inline-Spanish app
 
 ## Instructions on How to run locally
