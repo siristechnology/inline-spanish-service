@@ -40,7 +40,6 @@ module.exports = {
 	},
 
 	getArticles: async conditions => {
-		console.log('Printing conditions', conditions)
 		return await Article.find(conditions)
 			.sort({ _id: -1 })
 			.limit(50)

@@ -11,13 +11,11 @@ module.exports = async function(context, myTimer) {
 	const articles = await ArticleDbService.getArticles({ status: 'scraped' })
 
 	if (articles && articles.length > 0) {
-		const { articles: translatedArticles } = await ArticleTranslator.translateArticles(articles.slice(0, 1))
+		const { articles: translatedArticles } = await ArticleTranslator.translateArticles(articles.slice(0, 20))
 
-		console.log('Printing articles before saving', articles)
-
-		// await ArticleDbService.saveArticles(translatedArticles).catch(reason =>
-		// 	context.log('printing save failure reason', reason)
-		// )
+		await ArticleDbService.updateArticles(translatedArticles).catch(reason =>
+			context.log('printing save failure reason', reason)
+		)
 	}
 
 	context.log('JavaScript timer trigger function ran!', timeStamp)

@@ -11,6 +11,7 @@ module.exports = {
 				if (translateResult.status !== 'fail') {
 					article.original_content = translateResult.originalContent
 					article.translated_content = translateResult.translatedContent
+					article.status = 'translated'
 				}
 			}
 		}
