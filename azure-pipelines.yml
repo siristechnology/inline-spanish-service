@@ -33,10 +33,7 @@ stages:
 
                 - script: |
                       yarn
-                      yarn test
-                  env:
-                      GOOGLE_TRANSLATE_API_KEY: $(GOOGLE_TRANSLATE_API_KEY)
-                      DATABASE_URL: $(DATABASE_URL)
+                      yarn test                  
                   displayName: 'YARN build'
 
                 - task: ArchiveFiles@2
