@@ -1,4 +1,4 @@
-const TranslatedContentFetcher = require('../src/scrappers/translated-content-fetcher')
+const ContentFetcher = require('../src/scrappers/content-fetcher')
 const articleDbService = require('../src/db-service/article-db-service')
 
 module.exports = async function(context, myTimer) {
@@ -8,11 +8,13 @@ module.exports = async function(context, myTimer) {
 		context.log('JavaScript is running late!')
 	}
 
-	const { articles } = await TranslatedContentFetcher.fetchTranslatedArticles()
+	const { articles } = await ContentFetcher.fetchArticles()
 
-	await articleDbService
-		.saveArticles(articles, context)
-		.catch(reason => context.log('printing save failure reason', reason))
+	if (articles && articles.length > 0) {
+		await articleDbService
+			.saveArticles(articles, context)
+			.catch(reason => context.log('printing save failure reason', reason))
+	}
 
 	context.log('JavaScript timer trigger function ran!', timeStamp)
 }
