@@ -4,13 +4,14 @@ const htmlToText = require('html-to-text')
 
 module.exports = {
 	fetchArticles: async function() {
-		const config = this.getConfig('medium')
-		let { links } = await fetchLinks(config)
-		links = links.slice(0, 200)
+		const sourceConfigs = this.getConfigs()
+		let { articleUrls } = await fetchLinks(sourceConfigs)
+
+		articleUrls = articleUrls.slice(0, 500)
 
 		let articles = []
-		for (const link of links) {
-			const article = await this.scrapeArticleLink(link)
+		for (const articleUrl of articleUrls) {
+			const article = await this.scrapeArticleLink(articleUrl)
 			article.status = 'scraped'
 
 			if (article.contentText.length > 200) articles.push(article)
@@ -33,12 +34,7 @@ module.exports = {
 		})
 	},
 
-	getConfig: function(source) {
-		switch (source) {
-			case 'medium':
-				return require('./config/medium-config.json')
-			default:
-				break
-		}
+	getConfigs: function() {
+		return require('../scrappers/config/source-configs.json')
 	}
 }
