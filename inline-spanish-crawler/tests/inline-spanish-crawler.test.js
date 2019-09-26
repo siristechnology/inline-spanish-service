@@ -9,9 +9,11 @@ jest.mock('mongoose')
 
 describe('inline-spanish-crawler unit', () => {
 	it('function should call ContentFetcher and articleDbService', async () => {
-		const articles = {}
+		const articles = [{}]
 
-		const spyFetchArticles = jest.spyOn(ContentFetcher, 'fetchArticles').mockImplementation(() => articles)
+		const spyFetchArticles = jest.spyOn(ContentFetcher, 'fetchArticles').mockImplementation(() => {
+			return { articles }
+		})
 
 		const spySaveArticles = jest.spyOn(articleDbService, 'saveArticles').mockImplementation(() => {
 			return { catch: jest.fn() }
