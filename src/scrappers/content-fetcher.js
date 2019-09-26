@@ -11,7 +11,9 @@ module.exports = {
 		let articles = []
 		for (const link of links) {
 			const article = await this.scrapeArticleLink(link)
-			articles.push(article)
+			article.status = 'scraped'
+
+			if (article.contentText.length > 100) articles.push(article)
 		}
 
 		return { articles: articles }
@@ -21,7 +23,7 @@ module.exports = {
 		return new Promise((resolve, reject) => {
 			Mercury.parse(url)
 				.then(result => {
-					result.contentText = htmlToText.fromString(result.content)
+					result.contentText = htmlToText.fromString(result.content).replace(/\[[^\]]*\]/g, '')
 					resolve(result)
 				})
 				.catch(reason => {

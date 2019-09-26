@@ -8,7 +8,7 @@ trigger:
 
 variables:
     # Azure Resource Manager connection created during pipeline creation
-    azureSubscription: '1e945fce-64c9-44ed-b04d-f2988813d3e1'
+    azureSubscription: '12a77424-90ae-4d02-9330-65a782e6c8f7'
 
     functionAppName: 'inline-spanish-service-qa'
 
@@ -33,10 +33,7 @@ stages:
 
                 - script: |
                       yarn
-                      yarn test
-                  env:
-                      GOOGLE_TRANSLATE_API_KEY: $(GOOGLE_TRANSLATE_API_KEY)
-                      DATABASE_URL: $(DATABASE_URL)
+                      yarn test                  
                   displayName: 'YARN build'
 
                 - task: ArchiveFiles@2
