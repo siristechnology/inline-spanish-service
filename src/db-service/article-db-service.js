@@ -8,7 +8,8 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTo
 module.exports = {
 	saveArticles: async articles => {
 		try {
-			return await Article.insertMany(articles, { ordered: true, strict: 'throw' })
+			const savePromises = articles.map(article => Article.create(article))
+			return await Promise.all(savePromises)
 		} catch (error) {
 			if (error.code === 11000 || error.code === 11001) {
 				console.log('ignored duplicates')
@@ -19,11 +20,27 @@ module.exports = {
 		return null
 	},
 
+	updateArticles: async articles => {
+		try {
+			const updatePromises = articles.map(article => {
+				const articleUpdate = JSON.parse(JSON.stringify(article))
+				delete articleUpdate._id
+
+				return Article.updateOne({ _id: article.id }, { $set: { ...articleUpdate } })
+			})
+			return await Promise.all(updatePromises)
+		} catch (error) {
+			console.log(error)
+		}
+		return null
+	},
+
 	deleteArticles: async _ids => {
 		return await Article.deleteMany({ _id: { $in: _ids } })
 	},
 
 	getArticles: async conditions => {
+		console.log('Printing conditions', conditions)
 		return await Article.find(conditions)
 			.sort({ _id: -1 })
 			.limit(50)
