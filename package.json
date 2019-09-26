@@ -28,7 +28,7 @@
 		"cheerio": "1.0.0-rc.3",
 		"difflib": "0.2.4",
 		"dotenv": "8.1.0",
-		"graphql": "14.5.7",
+		"graphql": "14.5.8",
 		"html-to-text": "5.1.1",
 		"mongoose": "5.7.1"
 	},
