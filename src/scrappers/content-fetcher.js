@@ -6,14 +6,14 @@ module.exports = {
 	fetchArticles: async function() {
 		const config = this.getConfig('medium')
 		let { links } = await fetchLinks(config)
-		links = links.slice(0, 10)
+		links = links.slice(0, 200)
 
 		let articles = []
 		for (const link of links) {
 			const article = await this.scrapeArticleLink(link)
 			article.status = 'scraped'
 
-			if (article.contentText.length > 100) articles.push(article)
+			if (article.contentText.length > 200) articles.push(article)
 		}
 
 		return { articles: articles }
