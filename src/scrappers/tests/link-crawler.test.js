@@ -4,10 +4,21 @@ import sourceConfigs from '../config/source-configs.json'
 jest.setTimeout(10000)
 
 describe('link-crawler', () => {
-	it(' should fetch links from medium.com successfully', async () => {
-		const { articleUrls } = await fetchLinks(sourceConfigs)
+	it('should fetch links from medium.com successfully', async () => {
+		const mediumSourceConfig = sourceConfigs.filter(config => config.name === 'medium')
+		const { articleLinks } = await fetchLinks(mediumSourceConfig)
 
-		expect(articleUrls.length).toBeGreaterThan(5)
-		expect(articleUrls[0].includes('medium.com')).toBe(true)
+		expect(articleLinks.length).toBeGreaterThan(2)
+
+		expect(articleLinks.find(articleLink => articleLink.articleUrl.includes('medium.com'))).toBeTruthy()
+	})
+
+	it('should fetch links from bbc.com successfully', async () => {
+		const bbcSourceConfig = sourceConfigs.filter(config => config.name === 'bbc')
+		const { articleLinks } = await fetchLinks(bbcSourceConfig)
+
+		expect(articleLinks.length).toBeGreaterThan(5)
+
+		expect(articleLinks.find(articleLink => articleLink.articleUrl.includes('bbc.com'))).toBeTruthy()
 	})
 })

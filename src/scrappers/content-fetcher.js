@@ -5,16 +5,21 @@ const htmlToText = require('html-to-text')
 module.exports = {
 	fetchArticles: async function() {
 		const sourceConfigs = this.getConfigs()
-		let { articleUrls } = await fetchLinks(sourceConfigs)
+		let { articleLinks } = await fetchLinks(sourceConfigs)
 
-		articleUrls = articleUrls.slice(0, 500)
+		articleLinks = articleLinks.slice(0, 100)
 
 		let articles = []
-		for (const articleUrl of articleUrls) {
-			const article = await this.scrapeArticleLink(articleUrl)
-			article.status = 'scraped'
+		for (const articleLink of articleLinks) {
+			try {
+				const article = await this.scrapeArticleLink(articleLink.articleUrl)
+				article.status = 'scraped'
+				article.source = articleLink.source
 
-			if (article.contentText.length > 200) articles.push(article)
+				if (article.contentText.length > 200) articles.push(article)
+			} catch (reason) {
+				console.log('Printing reason', reason)
+			}
 		}
 
 		return { articles: articles }
@@ -28,7 +33,6 @@ module.exports = {
 					resolve(result)
 				})
 				.catch(reason => {
-					console.log('Printing reason', reason)
 					reject(reason)
 				})
 		})

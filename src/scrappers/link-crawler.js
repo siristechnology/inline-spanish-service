@@ -4,7 +4,7 @@ const URL = require('url')
 
 module.exports = async function(sourceConfigs) {
 	try {
-		let articleUrls = []
+		let articleLinks = []
 
 		for (const config of sourceConfigs) {
 			for (const link of config.links) {
@@ -12,8 +12,6 @@ module.exports = async function(sourceConfigs) {
 					url: link.url,
 					headers: config.headers
 				})
-
-				// console.log('Printing link.url', link.url)
 
 				let $ = cheerio.load(response.data)
 
@@ -26,13 +24,13 @@ module.exports = async function(sourceConfigs) {
 						if (!articleUrl.startsWith('https://')) {
 							articleUrl = `${baseUrl}${articleUrl}`
 						}
-						articleUrls.push(articleUrl)
+						articleLinks.push({ articleUrl, source: config.name })
 					})
 				}
 			}
 		}
 
-		return { articleUrls: articleUrls }
+		return { articleLinks: articleLinks }
 	} catch (error) {
 		console.log('Printing error', error)
 		return { message: 'Error while crawling links' }

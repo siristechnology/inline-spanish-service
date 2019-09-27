@@ -18,11 +18,11 @@
 		}
 	},
 	{
-		"name": "cnn",
+		"name": "bbc",
 		"links": [
 			{
-				"url": "https://www.cnn.com/",
-				"links-selector": ["div ui>li>article div h3>a"]
+				"url": "https://www.bbc.com",
+				"links-selector": ["#page > section.module  ul > li div.media__content > h3 > a"]
 			}
 		]
 	}
