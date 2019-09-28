@@ -1,6 +1,7 @@
 # Spanilla Service backend
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/siristechnology/spanilla.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/siristechnology/spanilla-service.svg)](https://greenkeeper.io/) \
+[![Build Status](https://dev.azure.com/siristechnology/spanilla/_apis/build/status/siristechnology.spanilla-service?branchName=master)](https://dev.azure.com/siristechnology/spanilla/_build/latest?definitionId=9&branchName=master)
 
 Backend for Spanilla app
 
