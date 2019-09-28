@@ -1,7 +1,7 @@
 {
-	"name": "inline-spanish-service",
+	"name": "spanilla-service",
 	"version": "1.0.1",
-	"description": "A backend service for inline-spanish mobile app",
+	"description": "A backend service for spanilla mobile app",
 	"main": "index.js",
 	"scripts": {
 		"preinstall": "node tools/preinstall-script.js",
@@ -11,15 +11,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/syuraj/inline-spanish-service.git"
+		"url": "git+https://github.com/siristechnology/spanilla-service.git"
 	},
 	"keywords": [],
 	"author": "syuraj@gmail.com",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/syuraj/inline-spanish-service/issues"
+		"url": "https://github.com/siristechnology/spanilla-service/issues"
 	},
-	"homepage": "https://github.com/syuraj/inline-spanish-service#readme",
+	"homepage": "https://github.com/siristechnology/spanilla-service#readme",
 	"dependencies": {
 		"@google-cloud/translate": "4.1.3",
 		"@postlight/mercury-parser": "2.2.0",

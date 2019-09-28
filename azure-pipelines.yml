@@ -10,9 +10,9 @@ variables:
     # Azure Resource Manager connection created during pipeline creation
     azureSubscription: '12a77424-90ae-4d02-9330-65a782e6c8f7'
 
-    functionAppName: 'inline-spanish-service-qa'
+    functionAppName: 'spanilla-service-qa'
 
-    environmentName: 'inline-spanish-service-qa'
+    environmentName: 'spanilla-service-qa'
 
     vmImageName: 'ubuntu-latest'
 
@@ -33,7 +33,7 @@ stages:
 
                 - script: |
                       yarn
-                      yarn test                  
+                      yarn test
                   displayName: 'YARN build'
 
                 - task: ArchiveFiles@2
@@ -63,7 +63,7 @@ stages:
                     deploy:
                         steps:
                             - task: AzureFunctionApp@1
-                              displayName: 'Azure Functions App Deploy: inline-spanish-service-qa'
+                              displayName: 'Azure Functions App Deploy: spanilla-service-qa'
                               inputs:
                                   azureSubscription: '$(azureSubscription)'
                                   appType: functionAppLinux

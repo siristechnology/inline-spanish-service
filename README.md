@@ -1,15 +1,15 @@
-# Inline Spanish Service backend
+# Spanilla Service backend
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/siristechnology/inline-spanish-service.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/siristechnology/spanilla.svg)](https://greenkeeper.io/)
 
-Backend for Inline-Spanish app
+Backend for Spanilla app
 
 ## Instructions on How to run locally
 
 -   Add environment variables as mentioned in .env.sample
 -   To run all functions locally `yarn start`
--   To run only one function locally `func start --functions inline-spanish-crawler`
--   To call function locally, go to url like `http://localhost:7071/api/inline-spanish-api`
+-   To run only one function locally `func start --functions spanilla-crawler`
+-   To call function locally, go to url like `http://localhost:7071/api/spanilla-api`
 
 ## GraphQL Screenshot
 
