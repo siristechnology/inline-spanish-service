@@ -41,6 +41,7 @@ module.exports = {
 
 	getArticles: async conditions => {
 		return await Article.find(conditions)
+			.lean()
 			.sort({ _id: -1 })
 			.limit(50)
 	},

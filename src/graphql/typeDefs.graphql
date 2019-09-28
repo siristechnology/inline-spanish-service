@@ -4,7 +4,6 @@ type Article {
 	url: String!
 	lead_image_url: String
 	excerpt: String
-	content: String!
 	original_content: [String]!
 	translated_content: [String]!
 	likes: Int
@@ -21,11 +20,9 @@ input ArticleCriteria {
 }
 
 type Source {
-	_id: String!
-	name: String
-	url: String
-	link: String
-	logoLink: String
+	name: String!
+	logoLink: String!
+	category: String!
 }
 
 type Query {
