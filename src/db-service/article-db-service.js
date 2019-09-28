@@ -43,7 +43,7 @@ module.exports = {
 		return await Article.find(conditions)
 			.lean()
 			.sort({ _id: -1 })
-			.limit(50)
+			.limit(100)
 	},
 
 	doesExist: async newslink => {

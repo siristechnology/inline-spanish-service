@@ -7,7 +7,8 @@ module.exports = {
 			args.criteria = args.criteria || {}
 			args.criteria.lastQueryDate = args.criteria.lastQueryDate || new Date('2001-01-01')
 
-			let articles = await ArticleDbService.getArticles()
+			let articles = await ArticleDbService.getArticles({ status: 'translated' })
+			articles = articles.slice(0, 100)
 
 			const articlesWithSource = articles.map(article => {
 				article.source = Sources.find(s => s.name === article.source)

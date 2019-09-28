@@ -20,7 +20,7 @@ module.exports = {
 		return new Promise((resolve, reject) => {
 			const translator = new Translate({ key: process.env.GOOGLE_TRANSLATE_API_KEY })
 
-			translator.translate(content.slice(0, 5000), language, function(err, translation) {
+			translator.translate(content, language, function(err, translation) {
 				if (!translation) {
 					console.log('Printing err', err)
 					console.log('Printing article', content)

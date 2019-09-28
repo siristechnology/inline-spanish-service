@@ -3,9 +3,9 @@ const GoogleTranslator = require('./google-translator')
 module.exports = {
 	translateArticles: async function(articles) {
 		for (const article of articles) {
-			const shortenedText = article.contentText.slice(0, 5000)
+			const shortenedText = article.contentText.slice(0, 3000)
 
-			if (shortenedText.length > 100) {
+			if (shortenedText.length > 200) {
 				const translateResult = await GoogleTranslator.translateArticle(shortenedText, 'es')
 
 				if (translateResult.status !== 'fail') {
