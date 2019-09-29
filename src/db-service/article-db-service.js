@@ -25,8 +25,9 @@ module.exports = {
 			const updatePromises = articles.map(article => {
 				const articleUpdate = JSON.parse(JSON.stringify(article))
 				delete articleUpdate._id
+				delete articleUpdate.contentText
 
-				return Article.updateOne({ _id: article.id }, { $set: { ...articleUpdate } })
+				return Article.replaceOne({ _id: article._id }, articleUpdate)
 			})
 			return await Promise.all(updatePromises)
 		} catch (error) {

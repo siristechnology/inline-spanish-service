@@ -8,7 +8,7 @@ const Article = mongoose.model(
 		url: { type: String, required: true, unique: true },
 		lead_image_url: String,
 		excerpt: String,
-		contentText: { type: String, required: true },
+		contentText: String,
 		original_content: { type: [String], required: true },
 		translated_content: { type: [String], required: true },
 		likes: Number,
