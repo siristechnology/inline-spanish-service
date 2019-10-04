@@ -1461,14 +1461,14 @@ apollo-link@^1.2.3:
     tslib "^1.9.3"
     zen-observable-ts "^0.8.20"
 
-apollo-server-azure-functions@2.9.4:
-  version "2.9.4"
-  resolved "https://registry.yarnpkg.com/apollo-server-azure-functions/-/apollo-server-azure-functions-2.9.4.tgz#10f36c6729b204846f0acaf05ca107194ef8f88c"
-  integrity sha512-jAIZ9FuX1Wc92cIxbcnUmG92bavm73lyB7YIMCOH3PULKVh5lXkXtO31UVL/pA2ChsjScfUDzB9/uIQyVpikLw==
+apollo-server-azure-functions@2.9.5:
+  version "2.9.5"
+  resolved "https://registry.yarnpkg.com/apollo-server-azure-functions/-/apollo-server-azure-functions-2.9.5.tgz#30b84454c73a5ed9c5a605fa04b04b9d2fbeba9b"
+  integrity sha512-wj9ZvGfOvfefPZd2shCkessHsNiQ0hXgT1R6U/UT2xA//Bybc1HqmYDFV5EvXK42oecQCx+HfMNwwaoK7FViHg==
   dependencies:
     "@apollographql/graphql-playground-html" "1.6.24"
     "@azure/functions" "1.0.3"
-    apollo-server-core "^2.9.4"
+    apollo-server-core "^2.9.5"
     apollo-server-env "^2.4.3"
     apollo-server-types "^0.2.4"
     graphql-tools "^4.0.0"
@@ -1480,10 +1480,10 @@ apollo-server-caching@^0.5.0:
   dependencies:
     lru-cache "^5.0.0"
 
-apollo-server-core@^2.9.4:
-  version "2.9.4"
-  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.9.4.tgz#0404455884951804d23ea64e45514c73afd34e5e"
-  integrity sha512-6mzipnn9woJxgo/JQFWTlY13svS7HCr0ZsN035eRmKOsXzROfB9ugXcTuc6MP94ICM7TlB/DtJOP+bLX53mijw==
+apollo-server-core@^2.9.5:
+  version "2.9.5"
+  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.9.5.tgz#b2d9188d7acce5fe92a5460d276794988ffa6737"
+  integrity sha512-SlM/vhjhWb0ayXV3d4gnpq9gh2BsQj+UPfQXfq2X2KG9EH5I1JUH6EtlsctgMCZozirOZmEmUzlqZWSSUOUPgQ==
   dependencies:
     "@apollographql/apollo-tools" "^0.4.0"
     "@apollographql/graphql-playground-html" "1.6.24"
