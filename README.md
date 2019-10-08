@@ -1,7 +1,8 @@
 # Spanilla Service backend
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/siristechnology/spanilla-service.svg)](https://greenkeeper.io/) \
-[![Build Status](https://dev.azure.com/siristechnology/spanilla/_apis/build/status/siristechnology.spanilla-service?branchName=master)](https://dev.azure.com/siristechnology/spanilla/_build/latest?definitionId=9&branchName=master)
+[![Build Status](https://dev.azure.com/siristechnology/spanilla/_apis/build/status/siristechnology.spanilla-service?branchName=master)](https://dev.azure.com/siristechnology/spanilla/_build/latest?definitionId=9&branchName=master) \
+[![DeepScan grade](https://deepscan.io/api/teams/5348/projects/7494/branches/77081/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=5348&pid=7494&bid=77081)
 
 Backend for Spanilla app
 
