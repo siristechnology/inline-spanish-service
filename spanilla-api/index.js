@@ -6,7 +6,7 @@ process.env.NODE_ENV = 'development'
 
 console.log('Printing __dirname', __dirname)
 
-const typeDefSchema = fs.readFileSync('./src/graphql/typeDefs.graphql', 'utf8')
+const typeDefSchema = fs.readFileSync('../src/graphql/typeDefs.graphql', 'utf8')
 const typeDefs = gql(typeDefSchema)
 
 const server = new ApolloServer({
