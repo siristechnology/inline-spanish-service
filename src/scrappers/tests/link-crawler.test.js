@@ -21,4 +21,13 @@ describe('link-crawler', () => {
 
 		expect(articleLinks.find(articleLink => articleLink.articleUrl.includes('bbc.com'))).toBeTruthy()
 	})
+
+	it('should fetch links from cnn.com successfully', async () => {
+		const cnnSourceConfig = sourceConfigs.filter(config => config.name === 'cnn')
+		const { articleLinks } = await fetchLinks(cnnSourceConfig)
+
+		expect(articleLinks.length).toBeGreaterThan(5)
+
+		expect(articleLinks.find(articleLink => articleLink.articleUrl.includes('cnn.com'))).toBeTruthy()
+	})
 })

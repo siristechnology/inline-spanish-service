@@ -29,5 +29,16 @@
 				"links-selector": ["#page > section.module  ul > li div.media__content > h3 > a"]
 			}
 		]
+	},
+	{
+		"name": "cnn",
+		"logoLink": "https://myrealdomain.com/images/cnn-png-8.png",
+		"category": "news",
+		"links": [
+			{
+				"url": "https://www.cnn.com/specials/last-50-stories",
+				"links-selector": ["#automated-topic-zone > div > div article > div h3 > a"]
+			}
+		]
 	}
 ]

@@ -6,7 +6,7 @@ const Article = mongoose.model(
 	new Schema({
 		title: { type: String, required: true, unique: true },
 		url: { type: String, required: true, unique: true },
-		lead_image_url: String,
+		lead_image_url: { type: String, required: true },
 		excerpt: String,
 		contentText: String,
 		original_content: { type: [String], required: true },
