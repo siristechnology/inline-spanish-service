@@ -814,24 +814,24 @@
   resolved "https://registry.yarnpkg.com/@google-cloud/promisify/-/promisify-1.0.2.tgz#e581aa79ff71fb6074acc1cc59e3d81bf84ce07b"
   integrity sha512-7WfV4R/3YV5T30WRZW0lqmvZy9hE2/p9MvpI34WuKa2Wz62mLu5XplGTFEMK6uTbJCLWUxTcZ4J4IyClKucE5g==
 
-"@google-cloud/translate@4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@google-cloud/translate/-/translate-4.2.0.tgz#8bf4fc06f828b5ea01760918990ca65a84b2df22"
-  integrity sha512-U2czp2T7Hby5YdURLMoxS97sJs9nfIJtWX9K9QftIdMorTu3ESbDt7FV6u9FwS7XdfcqjxacsxJ9gMrek0b5SA==
+"@google-cloud/translate@4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@google-cloud/translate/-/translate-4.2.1.tgz#134c58b6ddcf51f220b751f24bef233ee2ba305c"
+  integrity sha512-KTCfLOhslK3ePBgPRz/EAWRU6AQpH3fvX2l0wo9Xp4NP4ZHf1rCnilcYizR32vhchcJTBtcdm4LoXyMNi+bZiQ==
   dependencies:
     "@google-cloud/common" "^2.0.0"
     "@google-cloud/promisify" "^1.0.0"
     arrify "^2.0.0"
     extend "^3.0.2"
-    google-gax "^1.6.3"
+    google-gax "^1.7.5"
     is "^3.2.1"
     is-html "^2.0.0"
     protobufjs "^6.8.8"
 
-"@grpc/grpc-js@0.6.8":
-  version "0.6.8"
-  resolved "https://registry.yarnpkg.com/@grpc/grpc-js/-/grpc-js-0.6.8.tgz#0931270a0b1fefcf87a43105fd663dfc34fb1667"
-  integrity sha512-/k038P6PBCwJVD/3Ndk3RlIIMWY/FNVRGF1vX8zXO0XXuM+1FJLHpJglKWxiZNF6jLpEZue9y0VpgnudMIk3zA==
+"@grpc/grpc-js@0.6.9":
+  version "0.6.9"
+  resolved "https://registry.yarnpkg.com/@grpc/grpc-js/-/grpc-js-0.6.9.tgz#49e0b32b92b822df294cc576df169cc6112063b4"
+  integrity sha512-r1nDOEEiYmAsVYBaS4DPPqdwPOXPw7YhVOnnpPdWhlNtKbYzPash6DqWTTza9gBiYMA5d2Wiq6HzrPqsRaP4yA==
   dependencies:
     semver "^6.2.0"
 
@@ -3208,12 +3208,12 @@ google-auth-library@^5.0.0:
     jws "^3.1.5"
     lru-cache "^5.0.0"
 
-google-gax@^1.6.3:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/google-gax/-/google-gax-1.7.4.tgz#18d14d064c82983bc79816deebfdbf93d438f009"
-  integrity sha512-K790wkaEuAeZwfT3yF+oM5Y8foPNErNTzPLMU7qL5THsGYmZHlLpoqwHF9kWxY9pZDwOo3xip34tmCte17lP6w==
+google-gax@^1.7.5:
+  version "1.7.5"
+  resolved "https://registry.yarnpkg.com/google-gax/-/google-gax-1.7.5.tgz#bc462d378536e14eae8b78d5f195c4173c4893ce"
+  integrity sha512-Tz2DFs8umzDcCBTi2W1cY4vEgAKaYRj70g6Hh/MiiZaJizrly7PgyxsIYUGi7sOpEuAbARQymYKvy5mNi8hEbg==
   dependencies:
-    "@grpc/grpc-js" "0.6.8"
+    "@grpc/grpc-js" "0.6.9"
     "@grpc/proto-loader" "^0.5.1"
     abort-controller "^3.0.0"
     duplexify "^3.6.0"
@@ -4765,10 +4765,10 @@ mongoose-legacy-pluralize@1.0.2:
   resolved "https://registry.yarnpkg.com/mongoose-legacy-pluralize/-/mongoose-legacy-pluralize-1.0.2.tgz#3ba9f91fa507b5186d399fb40854bff18fb563e4"
   integrity sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
 
-mongoose@5.7.6:
-  version "5.7.6"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.7.6.tgz#c3aaf068d0fdf982b4a372ed9868c9ddba0b1978"
-  integrity sha512-2r87HmQMDCeZocoFmYGnJSpCW9ut95iQyPUcseG2B6EiAJjJBmR3pA01QyDF2+zQWpA8Ui4wH7xOq05U1nF6wg==
+mongoose@5.7.7:
+  version "5.7.7"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.7.7.tgz#038b47d10434ea6cc9ec9b45d88bfcf9ab401a1a"
+  integrity sha512-FU59waB4LKBa9KOnqBUcCcMIVRc09TFo1F8nMxrzSiIWATaJpjxxSSH5FBVUDxQfNdJLfg9uFHxaTxhhwjsZOQ==
   dependencies:
     bson "~1.1.1"
     kareem "2.3.1"
