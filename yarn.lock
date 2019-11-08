@@ -814,10 +814,10 @@
   resolved "https://registry.yarnpkg.com/@google-cloud/promisify/-/promisify-1.0.2.tgz#e581aa79ff71fb6074acc1cc59e3d81bf84ce07b"
   integrity sha512-7WfV4R/3YV5T30WRZW0lqmvZy9hE2/p9MvpI34WuKa2Wz62mLu5XplGTFEMK6uTbJCLWUxTcZ4J4IyClKucE5g==
 
-"@google-cloud/translate@4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@google-cloud/translate/-/translate-4.2.1.tgz#134c58b6ddcf51f220b751f24bef233ee2ba305c"
-  integrity sha512-KTCfLOhslK3ePBgPRz/EAWRU6AQpH3fvX2l0wo9Xp4NP4ZHf1rCnilcYizR32vhchcJTBtcdm4LoXyMNi+bZiQ==
+"@google-cloud/translate@5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@google-cloud/translate/-/translate-5.0.2.tgz#62b7a9a4517e91929da1b49644e8341cf413ce4e"
+  integrity sha512-6BzJkjI3PF+1V+zx8cvqBSqvZh4s+Hcs1MBTKK2yZaZP2OBf6Xmrjt6R07vWrg8HLy4xZ2udSJsQDY8M/L3i7A==
   dependencies:
     "@google-cloud/common" "^2.0.0"
     "@google-cloud/promisify" "^1.0.0"
