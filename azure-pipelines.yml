@@ -9,11 +9,8 @@ trigger:
 variables:
     # Azure Resource Manager connection created during pipeline creation
     azureSubscription: '12a77424-90ae-4d02-9330-65a782e6c8f7'
-
-    functionAppName: 'spanilla-service-qa'
-
-    environmentName: 'spanilla-service-qa'
-
+    qaFunctionAppName: 'spanilla-service-qa'
+    qaEnvironmentName: 'spanilla-service-qa'
     vmImageName: 'ubuntu-latest'
 
 stages:
@@ -48,14 +45,14 @@ stages:
                 - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
                   artifact: drop
 
-    - stage: Deploy
-      displayName: Deploy stage
+    - stage: Deploy QA 
+      displayName: Deploy QA
       dependsOn: Build
       condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
       jobs:
           - deployment: Deploy
             displayName: Deploy
-            environment: $(environmentName)
+            environment: $(qaEnvironmentName)
             pool:
                 vmImage: $(vmImageName)
             strategy:
@@ -67,5 +64,5 @@ stages:
                               inputs:
                                   azureSubscription: '$(azureSubscription)'
                                   appType: functionAppLinux
-                                  appName: $(functionAppName)
+                                  appName: $(qaFunctionAppName)
                                   package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
