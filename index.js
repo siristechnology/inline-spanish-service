@@ -61,13 +61,7 @@ const server = new ApolloServer({
 	resolvers: resolvers,
 	context: ({ req, res }) => ({
 		...{ userContext: req.payload }
-	}),
-	playground: {
-		settings: {
-			'editor.theme': 'light'
-		},
-		version: '1.7.25'
-	}
+	})
 })
 
 server.applyMiddleware({ app })
