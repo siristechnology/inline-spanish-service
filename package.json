@@ -32,7 +32,7 @@
 		"dotenv": "8.2.0",
 		"graphql": "14.5.8",
 		"html-to-text": "5.1.1",
-		"mongoose": "5.7.11",
+		"mongoose": "5.7.12",
 		"morgan": "1.9.1",
 		"require-graphql-file": "1.0.1",
 		"morgan-body": "2.4.8",
