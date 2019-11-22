@@ -874,16 +874,16 @@
   resolved "https://registry.yarnpkg.com/@google-cloud/promisify/-/promisify-1.0.2.tgz#e581aa79ff71fb6074acc1cc59e3d81bf84ce07b"
   integrity sha512-7WfV4R/3YV5T30WRZW0lqmvZy9hE2/p9MvpI34WuKa2Wz62mLu5XplGTFEMK6uTbJCLWUxTcZ4J4IyClKucE5g==
 
-"@google-cloud/translate@5.0.2":
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/@google-cloud/translate/-/translate-5.0.2.tgz#62b7a9a4517e91929da1b49644e8341cf413ce4e"
-  integrity sha512-6BzJkjI3PF+1V+zx8cvqBSqvZh4s+Hcs1MBTKK2yZaZP2OBf6Xmrjt6R07vWrg8HLy4xZ2udSJsQDY8M/L3i7A==
+"@google-cloud/translate@5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/translate/-/translate-5.1.0.tgz#5210b6c63de98d017d194b771510ae297a6eb043"
+  integrity sha512-vsuWXahEw7Zf2Kza5j1z42/XcYyXDIFZr2SHlPrpCxJvZiB6X18cm82juMLQ5bAgtHaYhiNKbqRkZHsb/WGJYQ==
   dependencies:
     "@google-cloud/common" "^2.0.0"
     "@google-cloud/promisify" "^1.0.0"
     arrify "^2.0.0"
     extend "^3.0.2"
-    google-gax "^1.7.5"
+    google-gax "^1.11.1"
     is "^3.2.1"
     is-html "^2.0.0"
     protobufjs "^6.8.8"
@@ -3456,10 +3456,10 @@ google-auth-library@^5.0.0, google-auth-library@^5.5.0:
     jws "^3.1.5"
     lru-cache "^5.0.0"
 
-google-gax@^1.7.5:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/google-gax/-/google-gax-1.10.0.tgz#36185e8f2f75e70cc19fd92bf22dbeaee2c5eab4"
-  integrity sha512-x2+Ra6W3tCNUqceGwLJoBQVcBraVfDv2FBsQGMVvgJNhX4X0uGoH8zc4Lzy63jCGxhDdvrQknEIrXR4RKunPog==
+google-gax@^1.11.1:
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/google-gax/-/google-gax-1.11.1.tgz#9be67c762f25445a6d8d410207f2c6e180b3b947"
+  integrity sha512-v/APF2G5h2nS5R/1DW2vsgloaMu2/B3xjHdAptR1yUwZpEd9rxPTlhqosrjl/VRu+gWGr9JZN19ZgJTXQ/Db6Q==
   dependencies:
     "@grpc/grpc-js" "0.6.9"
     "@grpc/proto-loader" "^0.5.1"
