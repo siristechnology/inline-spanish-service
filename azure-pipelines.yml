@@ -10,10 +10,10 @@ trigger:
 variables:
     # Azure Resource Manager connection created during pipeline creation
     azureSubscription: '12a77424-90ae-4d02-9330-65a782e6c8f7'
-    qaFunctionAppName: 'spanilla-service-qa'
-    qaEnvironmentName: 'spanilla-service-qa'
-    prodFunctionAppName: 'spanilla-service-prod'
-    prodEnvironmentName: 'spanilla-service-prod'
+    qaFunctionAppName: 'spanilla-qa'
+    qaEnvironmentName: 'spanilla-qa'
+    prodFunctionAppName: 'spanilla-prod'
+    prodEnvironmentName: 'spanilla-prod'
     vmImageName: 'ubuntu-latest'
 
 stages:
