@@ -3,7 +3,7 @@ const Mercury = require('@postlight/mercury-parser')
 const htmlToText = require('html-to-text')
 
 module.exports = {
-	fetchArticles: async function(maxArticles) {
+	fetchArticles: async function(maxArticles = 1) {
 		const sourceConfigs = this.getConfigs()
 		let { articleLinks } = await fetchLinks(sourceConfigs)
 
