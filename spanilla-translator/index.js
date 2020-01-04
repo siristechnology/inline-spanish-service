@@ -1,12 +1,8 @@
 const ArticleTranslator = require('../src/translate/articles-translator')
 const ArticleDbService = require('../src/db-service/article-db-service')
 
-module.exports = async function(context, myTimer) {
+module.exports = async function(context) {
 	var timeStamp = new Date().toISOString()
-
-	if (myTimer.IsPastDue) {
-		context.log('JavaScript is running late!')
-	}
 
 	const articles = await ArticleDbService.getArticles({ status: 'scraped' })
 
