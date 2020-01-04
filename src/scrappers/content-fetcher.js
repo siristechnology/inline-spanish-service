@@ -1,14 +1,13 @@
 const fetchLinks = require('./link-crawler')
 const Mercury = require('@postlight/mercury-parser')
 const htmlToText = require('html-to-text')
-require('dotenv').config()
 
 module.exports = {
-	fetchArticles: async function () {
+	fetchArticles: async function(maxArticles) {
 		const sourceConfigs = this.getConfigs()
 		let { articleLinks } = await fetchLinks(sourceConfigs)
 
-		articleLinks = articleLinks.slice(0, process.env.MAX_NO_OF_ARTICLES_PER_RUN)
+		articleLinks = articleLinks.slice(0, maxArticles)
 
 		let articles = []
 		for (const articleLink of articleLinks) {
@@ -26,7 +25,7 @@ module.exports = {
 		return { articles: articles }
 	},
 
-	scrapeArticleLink: async function (url) {
+	scrapeArticleLink: async function(url) {
 		return new Promise((resolve, reject) => {
 			Mercury.parse(url)
 				.then(result => {
@@ -39,7 +38,7 @@ module.exports = {
 		})
 	},
 
-	getConfigs: function () {
+	getConfigs: function() {
 		return require('../scrappers/config/source-configs.json')
 	}
 }
