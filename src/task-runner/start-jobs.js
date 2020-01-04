@@ -7,11 +7,12 @@ module.exports = async function() {
 	const agenda = new Agenda({ db: { address: process.env.DATABASE_URL } })
 
 	agenda.define('crawl articles', async job => {
+		console.log('crawl articles job started')
 		crawler(console)
 	})
 
 	agenda.define('translate articles', async job => {
-		console.log('Printing job', job)
+		console.log('translate articles job started')
 		translator(console)
 	})
 
