@@ -9,9 +9,8 @@ Backend for Spanilla app
 ## Instructions on How to run locally
 
 -   Add environment variables as mentioned in .env.sample
--   To run all functions locally `yarn start`
--   To run only one function locally `func start --functions spanilla-crawler`
--   To call function locally, go to url like `http://localhost:7071/api/spanilla-api`
+-   To start the api and jobs `yarn start`
+-   Go to `http://localhost:808`
 
 ## GraphQL Screenshot
 
