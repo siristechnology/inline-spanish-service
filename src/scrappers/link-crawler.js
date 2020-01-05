@@ -1,3 +1,4 @@
+require('dotenv').config()
 const axios = require('axios')
 const cheerio = require('cheerio')
 const URL = require('url')
@@ -7,6 +8,7 @@ module.exports = async function(sourceConfigs) {
 		let articleLinks = []
 
 		for (const config of sourceConfigs) {
+			let linksPerSource = []
 			for (const link of config.links) {
 				const response = await axios({
 					url: link.url,
@@ -24,10 +26,12 @@ module.exports = async function(sourceConfigs) {
 						if (!articleUrl.startsWith('https://')) {
 							articleUrl = `${baseUrl}${articleUrl}`
 						}
-						articleLinks.push({ articleUrl, source: config.name })
+						linksPerSource.push({ articleUrl, source: config.name })
 					})
 				}
 			}
+
+			articleLinks = articleLinks.concat(linksPerSource.slice(0, process.env.MAX_NO_OF_ARTICLES_PER_SOURCE_PER_RUN || 5))
 		}
 
 		return { articleLinks: articleLinks }

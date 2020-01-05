@@ -1,5 +1,25 @@
 [
 	{
+		"name": "cnn",
+		"logoLink": "https://myrealdomain.com/images/cnn-png-8.png",
+		"category": "news",
+		"links": [
+			{
+				"url": "https://www.cnn.com/us",
+				"links-selector": ["section[id^='us-zone'] > div > div article > div h3 > a"]
+			},
+			{
+				"url": "https://www.cnn.com/specials/last-50-stories",
+				"links-selector": ["#automated-topic-zone > div > div article > div h3 > a"]
+			}
+		],
+		"headers": {
+			"cache-control": "max-age=0",
+			"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+			"user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36 OPR/63.0.3368.75"
+		}
+	},
+	{
 		"name": "medium",
 		"logoLink": "https://miro.medium.com/fit/c/96/96/1*6_fgYnisCa9V21mymySIvA.png",
 		"category": "dev",
@@ -29,25 +49,5 @@
 				"links-selector": ["#page > section.module  ul > li div.media__content > h3 > a"]
 			}
 		]
-	},
-	{
-		"name": "cnn",
-		"logoLink": "https://myrealdomain.com/images/cnn-png-8.png",
-		"category": "news",
-		"links": [
-			{
-				"url": "https://www.cnn.com/us",
-				"links-selector": ["section[id^='us-zone'] > div > div article > div h3 > a"]
-			},
-			{
-				"url": "https://www.cnn.com/specials/last-50-stories",
-				"links-selector": ["#automated-topic-zone > div > div article > div h3 > a"]
-			}
-		],
-		"headers": {
-			"cache-control": "max-age=0",
-			"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
-			"user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36 OPR/63.0.3368.75"
-		}
 	}
 ]

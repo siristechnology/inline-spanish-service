@@ -3,11 +3,11 @@ const Mercury = require('@postlight/mercury-parser')
 const htmlToText = require('html-to-text')
 
 module.exports = {
-	fetchArticles: async function() {
+	fetchArticles: async function(maxArticles = 1) {
 		const sourceConfigs = this.getConfigs()
 		let { articleLinks } = await fetchLinks(sourceConfigs)
 
-		articleLinks = articleLinks.slice(0, 100)
+		articleLinks = articleLinks.slice(0, maxArticles)
 
 		let articles = []
 		for (const articleLink of articleLinks) {
