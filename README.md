@@ -10,7 +10,7 @@ Backend for Spanilla app
 
 -   Add environment variables as mentioned in .env.sample
 -   To start the api and jobs `yarn start`
--   Go to `http://localhost:808`
+-   Go to `http://localhost:8080`
 
 ## GraphQL Screenshot
 
