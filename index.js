@@ -7,22 +7,17 @@ const errorhandler = require('errorhandler')
 const { ApolloServer, gql } = require('apollo-server-express')
 const requireGraphQLFile = require('require-graphql-file')
 const resolvers = require('./src/graphql/resolvers.js')
+const startJobs = require('./src/task-runner/start-jobs')
 
 const isDevelopment = process.env.NODE_ENV === 'development'
+
+startJobs()
 
 const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-if (isDevelopment) {
-	morganBody(app, {
-		noColors: true,
-		logRequestBody: true,
-		logResponseBody: true
-	})
-} else {
-	app.use(morgan('combined'))
-}
+app.use(morgan('combined'))
 
 if (isDevelopment) {
 	app.use(errorhandler())
