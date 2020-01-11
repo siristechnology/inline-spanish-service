@@ -10,7 +10,7 @@ const startJobs = require('./src/task-runner/start-jobs')
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
-startJobs()
+if (process.env.START_JOBS !== 'false') startJobs()
 
 const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
