@@ -2,6 +2,20 @@
 	"semi": false,
 	"tabWidth": 4,
 	"singleQuote": true,
-	"printWidth": 140,
-	"useTabs": true
+	"printWidth": 120,
+	"useTabs": true,
+	"arrowParens": "always",
+	"bracketSpacing": true,
+	"htmlWhitespaceSensitivity": "css",
+	"insertPragma": false,
+	"jsxBracketSameLine": false,
+	"jsxSingleQuote": false,
+	"proseWrap": "preserve",
+	"quoteProps": "as-needed",
+	"requirePragma": false,
+	"trailingComma": "none",
+	"vueIndentScriptAndStyle": false,
+	"ast": false,
+	"doc": false,
+	"output2": false
 }

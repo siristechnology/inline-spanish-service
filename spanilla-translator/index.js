@@ -9,10 +9,10 @@ module.exports = async function(context) {
 	if (articles && articles.length > 0) {
 		const { articles: translatedArticles } = await ArticleTranslator.translateArticles(articles.slice(0, 5))
 
-		await ArticleDbService.updateArticles(translatedArticles).catch(reason =>
+		await ArticleDbService.updateArticles(translatedArticles).catch((reason) =>
 			context.log('printing save failure reason', reason)
 		)
 	}
 
-	context.log('JavaScript timer trigger function ran!', timeStamp)
+	context.log('translate articles job finished!', timeStamp)
 }
