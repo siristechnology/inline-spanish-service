@@ -2,7 +2,6 @@ require('dotenv').config()
 const morgan = require('morgan')
 const express = require('express')
 const bodyParser = require('body-parser')
-const morganBody = require('morgan-body')
 const errorhandler = require('errorhandler')
 const { ApolloServer, gql } = require('apollo-server-express')
 const requireGraphQLFile = require('require-graphql-file')
@@ -16,8 +15,8 @@ startJobs()
 const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-
 app.use(morgan('combined'))
+app.use('/assets', express.static('assets'))
 
 if (isDevelopment) {
 	app.use(errorhandler())

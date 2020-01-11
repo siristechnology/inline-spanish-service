@@ -1,5 +1,5 @@
 const ArticleDbService = require('../db-service/article-db-service')
-const Sources = require('../scrappers/config/source-configs.json')
+let Sources = require('../scrappers/config/source-configs.json')
 
 module.exports = {
 	Query: {
@@ -10,8 +10,12 @@ module.exports = {
 			let articles = await ArticleDbService.getArticles({ status: 'translated' })
 			articles = articles.slice(0, 100)
 
-			const articlesWithSource = articles.map(article => {
-				article.source = Sources.find(s => s.name === article.source)
+			const articlesWithSource = articles.map((article) => {
+				Sources = Sources.map((s) => {
+					return { ...s, logoLink: process.env.SERVER_BASE_URL + s.logoLink }
+				})
+
+				article.source = Sources.find((s) => s.name === article.source)
 				return article
 			})
 
