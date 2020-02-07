@@ -1,16 +1,20 @@
 [
 	{
 		"name": "cnn",
-		"logoLink": "https://myrealdomain.com/images/cnn-png-8.png",
+		"logoLink": "/assets/logos/cnn.png",
 		"category": "news",
 		"links": [
 			{
 				"url": "https://www.cnn.com/us",
-				"links-selector": ["section[id^='us-zone'] > div > div article > div h3 > a"]
+				"links-selector": [
+					"section[id^='us-zone'] > div > div article > div h3 > a"
+				]
 			},
 			{
 				"url": "https://www.cnn.com/specials/last-50-stories",
-				"links-selector": ["#automated-topic-zone > div > div article > div h3 > a"]
+				"links-selector": [
+					"#automated-topic-zone > div > div article > div h3 > a"
+				]
 			}
 		],
 		"headers": {
@@ -21,16 +25,20 @@
 	},
 	{
 		"name": "medium",
-		"logoLink": "https://miro.medium.com/fit/c/96/96/1*6_fgYnisCa9V21mymySIvA.png",
+		"logoLink": "/assets/logos/medium.png",
 		"category": "dev",
 		"links": [
 			{
 				"url": "https://medium.com/topic/popular",
-				"links-selector": ["#root section section div h3>a"]
+				"links-selector": [
+					"#root section section div h3>a"
+				]
 			},
 			{
 				"url": "https://medium.com/better-programming",
-				"links-selector": ["div section section div div>a"]
+				"links-selector": [
+					"div section section div div>a"
+				]
 			}
 		],
 		"headers": {
@@ -41,12 +49,14 @@
 	},
 	{
 		"name": "bbc",
-		"logoLink": "https://pbs.twimg.com/profile_images/670400483886952448/RkbIq331_400x400.png",
+		"logoLink": "/assets/logos/bbc.png",
 		"category": "news",
 		"links": [
 			{
 				"url": "https://www.bbc.com",
-				"links-selector": ["#page > section.module  ul > li div.media__content > h3 > a"]
+				"links-selector": [
+					"#page > section.module  ul > li div.media__content > h3 > a"
+				]
 			}
 		]
 	}

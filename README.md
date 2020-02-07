@@ -1,6 +1,5 @@
 # Spanilla Service backend
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/siristechnology/spanilla-service.svg)](https://greenkeeper.io/)
 [![DeepScan grade](https://deepscan.io/api/teams/5348/projects/7494/branches/77081/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=5348&pid=7494&bid=77081)
 [![codecov](https://codecov.io/gh/siristechnology/spanilla-service/branch/master/graph/badge.svg)](https://codecov.io/gh/siristechnology/spanilla-service)
 

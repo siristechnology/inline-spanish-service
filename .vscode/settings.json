@@ -4,10 +4,6 @@
 	"files.autoSave": "afterDelay",
 	"files.autoSaveDelay": 3000,
 	"editor.tabSize": 4,
-	"azureFunctions.deploySubpath": ".",
-	"azureFunctions.projectLanguage": "JavaScript",
-	"azureFunctions.projectRuntime": "~2",
 	"debug.internalConsoleOptions": "neverOpen",
-	"azureFunctions.preDeployTask": "npm prune",
 	"deepscan.enable": true
 }

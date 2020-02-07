@@ -10,8 +10,8 @@ module.exports = async function(context) {
 	if (articles && articles.length > 0) {
 		await articleDbService
 			.saveArticles(articles, context)
-			.catch(reason => context.log('printing save failure reason', reason))
+			.catch((reason) => context.log('printing save failure reason', reason))
 	}
 
-	context.log('JavaScript timer trigger function ran!', timeStamp)
+	context.log('crawl articles job finished!', timeStamp)
 }
