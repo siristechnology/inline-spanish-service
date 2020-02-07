@@ -1,6 +1,10 @@
 const ArticleDbService = require('../db-service/article-db-service')
 let Sources = require('../scrappers/config/source-configs.json')
 
+Sources = Sources.map((s) => {
+	return { ...s, logoLink: process.env.SERVER_BASE_URL + s.logoLink }
+})
+
 module.exports = {
 	Query: {
 		fetchArticles: async (parent, args) => {
@@ -11,10 +15,6 @@ module.exports = {
 			articles = articles.slice(0, 100)
 
 			const articlesWithSource = articles.map((article) => {
-				Sources = Sources.map((s) => {
-					return { ...s, logoLink: process.env.SERVER_BASE_URL + s.logoLink }
-				})
-
 				article.source = Sources.find((s) => s.name === article.source)
 				return article
 			})
