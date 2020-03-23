@@ -23,6 +23,7 @@
 	},
 	"homepage": "https://github.com/siristechnology/spanilla-service#readme",
 	"dependencies": {
+		"@bearer/node-agent": "2.0.7",
 		"@google-cloud/translate": "5.1.6",
 		"@postlight/mercury-parser": "2.2.0",
 		"agenda": "2.3.0",

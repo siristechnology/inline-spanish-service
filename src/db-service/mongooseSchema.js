@@ -15,7 +15,7 @@ const Article = mongoose.model(
 		source: String,
 		author: String,
 		status: String,
-		date_published: Date,
+		date_published: { type: Date, default: Date.now },
 		date_created: { type: Date, default: Date.now },
 		date_modified: { type: Date, default: Date.now }
 	})

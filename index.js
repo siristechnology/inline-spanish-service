@@ -5,10 +5,16 @@ const bodyParser = require('body-parser')
 const errorhandler = require('errorhandler')
 const { ApolloServer, gql } = require('apollo-server-express')
 const requireGraphQLFile = require('require-graphql-file')
+const Bearer = require('@bearer/node-agent')
+
 const resolvers = require('./src/graphql/resolvers.js')
 const startJobs = require('./src/task-runner/start-jobs')
 
 const isDevelopment = process.env.NODE_ENV === 'development'
+
+Bearer.init({
+	secretKey: process.env.BEARER_SH_API_KEY
+})
 
 if (process.env.START_JOBS !== 'false') startJobs()
 
