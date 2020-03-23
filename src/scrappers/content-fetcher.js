@@ -1,6 +1,7 @@
 const fetchLinks = require('./link-crawler')
 const Mercury = require('@postlight/mercury-parser')
 const htmlToText = require('html-to-text')
+const logger = require('../config/logger')
 
 module.exports = {
 	fetchArticles: async function(maxArticles = 1) {
@@ -18,7 +19,7 @@ module.exports = {
 
 				if (article.contentText.length > 200) articles.push(article)
 			} catch (reason) {
-				console.log('Printing reason', reason)
+				logger.info('Printing reason', reason)
 			}
 		}
 
@@ -28,11 +29,11 @@ module.exports = {
 	scrapeArticleLink: async function(url) {
 		return new Promise((resolve, reject) => {
 			Mercury.parse(url)
-				.then(result => {
+				.then((result) => {
 					result.contentText = htmlToText.fromString(result.content).replace(/\[[^\]]*\]/g, '')
 					resolve(result)
 				})
-				.catch(reason => {
+				.catch((reason) => {
 					reject(reason)
 				})
 		})

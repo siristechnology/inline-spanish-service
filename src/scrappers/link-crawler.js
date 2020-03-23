@@ -2,6 +2,7 @@ require('dotenv').config()
 const axios = require('axios')
 const cheerio = require('cheerio')
 const URL = require('url')
+const logger = require('../config/logger')
 
 module.exports = async function(sourceConfigs) {
 	try {
@@ -31,12 +32,14 @@ module.exports = async function(sourceConfigs) {
 				}
 			}
 
-			articleLinks = articleLinks.concat(linksPerSource.slice(0, process.env.MAX_NO_OF_ARTICLES_PER_SOURCE_PER_RUN || 5))
+			articleLinks = articleLinks.concat(
+				linksPerSource.slice(0, process.env.MAX_NO_OF_ARTICLES_PER_SOURCE_PER_RUN || 5)
+			)
 		}
 
 		return { articleLinks: articleLinks }
 	} catch (error) {
-		console.log('Printing error', error)
+		logger.error('Printing error', error)
 		return { message: 'Error while crawling links' }
 	}
 }

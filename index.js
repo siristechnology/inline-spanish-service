@@ -9,6 +9,7 @@ const Bearer = require('@bearer/node-agent')
 
 const resolvers = require('./src/graphql/resolvers.js')
 const startJobs = require('./src/task-runner/start-jobs')
+const logger = require('./src/config/logger')
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
@@ -66,4 +67,4 @@ const server = new ApolloServer({
 
 server.applyMiddleware({ app })
 
-app.listen(process.env.PORT, () => console.log(`Server running on http://localhost:${process.env.PORT}`))
+app.listen(process.env.PORT, () => logger.info(`Server running on http://localhost:${process.env.PORT}`))

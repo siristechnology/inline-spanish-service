@@ -1,5 +1,6 @@
 require('dotenv').config()
 const { Translate } = require('@google-cloud/translate').v2
+const Logger = require('../config/logger')
 
 module.exports = {
 	translateArticle: async function(content, language) {
@@ -22,9 +23,8 @@ module.exports = {
 
 			translator.translate(content, language, function(err, translation) {
 				if (!translation) {
-					console.log('Printing err', err)
-					console.log('Printing article', content)
-					console.log('Printing translation', translation)
+					Logger.error(err)
+					Logger.error(content)
 					reject('Translation failed')
 				} else {
 					resolve(translation)

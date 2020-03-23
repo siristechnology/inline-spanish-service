@@ -2,19 +2,20 @@ require('dotenv').config()
 const crawler = require('../../spanilla-crawler/index')
 const translator = require('../../spanilla-translator/index')
 const Agenda = require('agenda')
+const Logger = require('../config/logger')
 
 module.exports = async function() {
-	console.log('starting jobs')
+	Logger.info('starting jobs')
 
 	const agenda = new Agenda({ db: { address: process.env.DATABASE_URL } })
 
 	agenda.define('crawl articles', async (job) => {
-		console.log('crawl articles job started')
+		Logger.info('crawl articles job started')
 		crawler(console)
 	})
 
 	agenda.define('translate articles', async (job) => {
-		console.log('translate articles job started')
+		Logger.info('translate articles job started')
 		translator(console)
 	})
 
