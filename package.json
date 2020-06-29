@@ -27,7 +27,7 @@
 		"@google-cloud/translate": "5.3.0",
 		"@postlight/mercury-parser": "2.2.0",
 		"agenda": "3.1.0",
-		"apollo-server-express": "2.13.1",
+		"apollo-server-express": "2.14.2",
 		"axios": "0.19.2",
 		"cheerio": "1.0.0-rc.3",
 		"difflib": "0.2.4",
