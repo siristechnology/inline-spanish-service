@@ -1,59 +1,63 @@
 {
-	"name": "spanilla-service",
-	"version": "1.0.1",
-	"description": "A backend service for spanilla mobile app",
-	"main": "index.js",
-	"scripts": {
-		"preinstall": "node tools/preinstall-script.js",
-		"start": "pm2-runtime start ecosystem.config.js",
-		"start:function": "func start",
-		"format": "prettier --write \"src/**/*.js\"",
-		"test": "jest --testMatch '**/?(*.)+(spec|test).[tj]s?(x)' ",
-		"test:coverage": "jest --coverage --testMatch '**/?(*.)+(spec|test).[tj]s?(x)' "
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/siristechnology/spanilla-service.git"
-	},
-	"keywords": [],
-	"author": "syuraj@gmail.com",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/siristechnology/spanilla-service/issues"
-	},
-	"homepage": "https://github.com/siristechnology/spanilla-service#readme",
-	"dependencies": {
-		"@bearer/node-agent": "3.1.0",
-		"@google-cloud/translate": "5.3.0",
-		"@postlight/mercury-parser": "2.2.0",
-		"agenda": "3.1.0",
-		"apollo-server-express": "2.14.2",
-		"axios": "0.19.2",
-		"cheerio": "1.0.0-rc.3",
-		"difflib": "0.2.4",
-		"dotenv": "8.2.0",
-		"errorhandler": "1.5.1",
-		"graphql": "15.0.0",
-		"html-to-text": "5.1.1",
-		"mongoose": "5.9.13",
-		"morgan": "1.10.0",
-		"morgan-body": "2.4.8",
-		"pm2": "4.4.0",
-		"require-graphql-file": "1.0.1",
-		"winston": "3.2.1"
-	},
-	"devDependencies": {
-		"@babel/core": "7.9.6",
-		"@babel/preset-env": "7.9.6",
-		"axios-mock-adapter": "1.18.1",
-		"babel-eslint": "10.1.0",
-		"babel-jest": "26.0.1",
-		"eslint": "7.0.0",
-		"eslint-config-prettier": "6.11.0",
-		"eslint-plugin-prettier": "3.1.3",
-		"html-loader": "1.1.0",
-		"jest": "26.0.1",
-		"prettier": "2.0.5",
-		"prettier-eslint": "9.0.1"
-	}
+  "name": "spanilla-service",
+  "version": "1.0.1",
+  "description": "A backend service for spanilla mobile app",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "node tools/preinstall-script.js",
+    "start": "pm2-runtime start ecosystem.config.js",
+    "start:function": "func start",
+    "format": "prettier --write \"src/**/*.js\"",
+    "test": "jest --testMatch '**/?(*.)+(spec|test).[tj]s?(x)' ",
+    "test:coverage": "jest --coverage --testMatch '**/?(*.)+(spec|test).[tj]s?(x)' ",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siristechnology/spanilla-service.git"
+  },
+  "keywords": [],
+  "author": "syuraj@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siristechnology/spanilla-service/issues"
+  },
+  "homepage": "https://github.com/siristechnology/spanilla-service#readme",
+  "dependencies": {
+    "@bearer/node-agent": "3.1.0",
+    "@google-cloud/translate": "5.3.0",
+    "@postlight/mercury-parser": "2.2.0",
+    "agenda": "3.1.0",
+    "apollo-server-express": "2.14.2",
+    "axios": "0.19.2",
+    "cheerio": "1.0.0-rc.3",
+    "difflib": "0.2.4",
+    "dotenv": "8.2.0",
+    "errorhandler": "1.5.1",
+    "graphql": "15.0.0",
+    "html-to-text": "5.1.1",
+    "mongoose": "5.9.13",
+    "morgan": "1.10.0",
+    "morgan-body": "2.4.8",
+    "pm2": "4.4.0",
+    "require-graphql-file": "1.0.1",
+    "winston": "3.2.1",
+    "snyk": "^1.369.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.9.6",
+    "@babel/preset-env": "7.9.6",
+    "axios-mock-adapter": "1.18.1",
+    "babel-eslint": "10.1.0",
+    "babel-jest": "26.0.1",
+    "eslint": "7.0.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-prettier": "3.1.3",
+    "html-loader": "1.1.0",
+    "jest": "26.0.1",
+    "prettier": "2.0.5",
+    "prettier-eslint": "9.0.1"
+  },
+  "snyk": true
 }

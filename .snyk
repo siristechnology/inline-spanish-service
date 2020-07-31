@@ -1,0 +1,24 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.19.0
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - cheerio > lodash:
+        patched: '2020-07-31T18:29:17.453Z'
+    - html-to-text > lodash:
+        patched: '2020-07-31T18:29:17.453Z'
+    - '@postlight/mercury-parser > wuzzy > lodash':
+        patched: '2020-07-31T18:29:17.453Z'
+    - winston > async > lodash:
+        patched: '2020-07-31T18:29:17.453Z'
+    - '@postlight/mercury-parser > request-promise > request-promise-core > lodash':
+        patched: '2020-07-31T18:29:17.453Z'
+    - pm2 > @pm2/io > async > lodash:
+        patched: '2020-07-31T18:29:17.453Z'
+    - pm2 > @pm2/js-api > async > lodash:
+        patched: '2020-07-31T18:29:17.453Z'
+    - pm2 > cli-tableau > mocha > yargs-unparser > lodash:
+        patched: '2020-07-31T18:29:17.453Z'
+    - '@postlight/mercury-parser > turndown > jsdom > request-promise-native > request-promise-core > lodash':
+        patched: '2020-07-31T18:29:17.453Z'
