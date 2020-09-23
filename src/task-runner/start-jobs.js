@@ -4,7 +4,7 @@ const translator = require('../../spanilla-translator/index')
 const Agenda = require('agenda')
 const Logger = require('../config/logger')
 
-module.exports = async function() {
+module.exports = async function () {
 	Logger.info('starting jobs')
 
 	const agenda = new Agenda({ db: { address: process.env.DATABASE_URL } })

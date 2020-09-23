@@ -1,7 +1,7 @@
-# Spanilla Service backend
+# Spanilla Api backend
 
 [![DeepScan grade](https://deepscan.io/api/teams/5348/projects/7494/branches/77081/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=5348&pid=7494&bid=77081)
-[![codecov](https://codecov.io/gh/siristechnology/spanilla-service/branch/master/graph/badge.svg)](https://codecov.io/gh/siristechnology/spanilla-service)
+[![codecov](https://codecov.io/gh/siristechnology/spanilla-api/branch/master/graph/badge.svg)](https://codecov.io/gh/siristechnology/spanilla-api)
 
 Backend for Spanilla app
 

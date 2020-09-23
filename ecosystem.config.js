@@ -3,7 +3,7 @@ require('dotenv').config()
 module.exports = {
 	apps: [
 		{
-			name: 'spanilla.service',
+			name: 'spanilla.api',
 			script: 'index.js',
 			instances: process.env.APP_INSTANCES || 'max',
 			autorestart: true,

@@ -1,36 +1,25 @@
 {
 	"env": {
 		"es6": true,
-		"jest": true,
-		"node": true
+		"node": true,
+		"jest": true
 	},
-	"extends": ["eslint:recommended", "prettier"],
+	"extends": ["prettier"],
+	"plugins": ["prettier"],
 	"globals": {
 		"Atomics": "readonly",
-		"SharedArrayBuffer": "readonly"
+		"SharedArrayBuffer": "readonly",
+		"fetch": "readonly"
 	},
 	"parser": "babel-eslint",
 	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
 		"ecmaVersion": 2018,
 		"sourceType": "module"
 	},
-	"plugins": ["prettier"],
 	"rules": {
-		"semi": 0,
-		"indent": ["error", "tab", { "SwitchCase": 1 }],
-		"no-tabs": "off",
-		"import/extensions": "off",
-		"max-len": [
-			"error",
-			{
-				"code": 120,
-				"ignoreComments": true,
-				"ignoreStrings": true,
-				"ignoreUrls": true
-			}
-		],
-		"comma-dangle": "off",
-		"func-names": "off",
-		"no-console": "off"
+		"prettier/prettier": ["error"]
 	}
 }
