@@ -25,6 +25,15 @@ type Source {
 	category: String!
 }
 
+type WeatherInfo {
+	ipAddress: String
+	temperature: Float!
+	condition: String
+	description: String
+	place: String
+}
+
 type Query {
 	fetchArticles(criteria: ArticleCriteria): [Article]!
+	getWeatherInfo: WeatherInfo
 }

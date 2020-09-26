@@ -1,5 +1,7 @@
 const ArticleDbService = require('../db-service/article-db-service')
 let Sources = require('../scrappers/config/source-configs.json')
+const logger = require('../config/logger')
+const getWeather = require('../weather')
 
 Sources = Sources.map((s) => {
 	return { ...s, logoLink: process.env.SERVER_BASE_URL + s.logoLink }
@@ -20,6 +22,27 @@ module.exports = {
 			})
 
 			return articlesWithSource
+		},
+
+		getWeatherInfo: async (parent, args, { ipAddress }) => {
+			try {
+				if (ipAddress === '::1' || ipAddress === '::ffff:127.0.0.1') ipAddress = '27.111.16.0'
+				logger.debug(`Printing ip: ${ipAddress}`)
+
+				const weatherInfo = await getWeather(ipAddress)
+				weatherInfo.ipAddress = ipAddress
+
+				return {
+					ipAddress: ipAddress,
+					temperature: weatherInfo.main.temp,
+					condition: weatherInfo.weather[0].main,
+					description: weatherInfo.weather[0].description,
+					place: weatherInfo.name
+				}
+			} catch (error) {
+				logger.error({ error: error.stack })
+				throw error
+			}
 		}
 	}
 }

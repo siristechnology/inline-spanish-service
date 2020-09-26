@@ -63,9 +63,20 @@ const server = new ApolloServer({
 	typeDefs: typeDefs,
 	resolvers: resolvers,
 	context: ({ req, res }) => ({
-		...{ userContext: req.payload }
+		...{ userContext: req.payload, ipAddress: getIpAdressFromRequest(req) }
 	})
 })
+
+const getIpAdressFromRequest = (req) => {
+	let ipAddr = req.headers['x-forwarded-for']
+	if (ipAddr) {
+		ipAddr = ipAddr.split(',')[0]
+	} else {
+		ipAddr = req.connection.remoteAddress || req.ip
+	}
+
+	return ipAddr
+}
 
 server.applyMiddleware({ app })
 
