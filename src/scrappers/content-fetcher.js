@@ -1,45 +1,21 @@
-const fetchLinks = require('./link-crawler')
-const Mercury = require('@postlight/mercury-parser')
-const htmlToText = require('html-to-text')
-const logger = require('../config/logger')
+const NewsCrawler = require('news-crawler')
 
 module.exports = {
-	fetchArticles: async function(maxArticles = 1) {
-		const sourceConfigs = this.getConfigs()
-		let { articleLinks } = await fetchLinks(sourceConfigs)
+	fetchArticles: async function () {
+		const SourceConfig = require('../scrappers/config/source-configs.json')
+		const articles = await NewsCrawler(SourceConfig, { articleUrlLength: 1, headless: true })
 
-		articleLinks = articleLinks.slice(0, maxArticles)
+		let modifiedArticles = []
 
-		let articles = []
-		for (const articleLink of articleLinks) {
-			try {
-				const article = await this.scrapeArticleLink(articleLink.articleUrl)
-				article.status = 'scraped'
-				article.source = articleLink.source
+		articles.forEach((article) => {
+			article.status = 'scraped'
+			article.source = article.sourceName
+			article.contentText = article.content
+			article.lead_image_url = article.imageLink
 
-				if (article.contentText.length > 200) articles.push(article)
-			} catch (reason) {
-				logger.info('Printing reason', reason)
-			}
-		}
-
-		return { articles: articles }
-	},
-
-	scrapeArticleLink: async function(url) {
-		return new Promise((resolve, reject) => {
-			Mercury.parse(url)
-				.then((result) => {
-					result.contentText = htmlToText.fromString(result.content).replace(/\[[^\]]*\]/g, '')
-					resolve(result)
-				})
-				.catch((reason) => {
-					reject(reason)
-				})
+			if (article.contentText.length > 200) modifiedArticles.push(article)
 		})
-	},
 
-	getConfigs: function() {
-		return require('../scrappers/config/source-configs.json')
+		return { articles: modifiedArticles }
 	}
 }

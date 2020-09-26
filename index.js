@@ -14,7 +14,9 @@ const logger = require('./src/config/logger')
 const isDevelopment = process.env.NODE_ENV === 'development'
 
 Bearer.init({
-	secretKey: process.env.BEARER_SH_API_KEY
+	secretKey: process.env.BEARER_SH_API_KEY,
+	stripSensitiveData: true,
+	environment: process.env.BEARER_SH_ENV || process.env.NODE_ENV
 })
 
 if (process.env.START_JOBS !== 'false') startJobs()

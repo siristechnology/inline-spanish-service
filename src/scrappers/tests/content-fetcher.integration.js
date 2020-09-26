@@ -4,9 +4,9 @@ jest.setTimeout(60000)
 
 describe('content-fetcher', () => {
 	it('fetchArticles should fetch articles successfully', async () => {
-		const { articles } = await ContentFetcher.fetchArticles(2)
+		const { articles } = await ContentFetcher.fetchArticles()
 
-		expect(articles.length).toEqual(2)
+		expect(articles.length).toBeGreaterThan(2)
 	})
 
 	it('scrapeArticleLink should scrape a given article link', async () => {
