@@ -1,9 +1,14 @@
 const NewsCrawler = require('news-crawler')
 
 module.exports = {
-	fetchArticles: async function () {
+	fetchArticles: async function (maxArticlesPerPage) {
 		const SourceConfig = require('../scrappers/config/source-configs.json')
-		const articles = await NewsCrawler(SourceConfig, { articleUrlLength: 1, headless: true })
+
+		const articles = await NewsCrawler(SourceConfig, {
+			maxArticlesPerPage,
+			articleUrlLength: maxArticlesPerPage,
+			headless: true
+		})
 
 		let modifiedArticles = []
 
