@@ -6214,10 +6214,10 @@ netmask@^1.0.6:
   resolved "https://registry.yarnpkg.com/netmask/-/netmask-1.0.6.tgz#20297e89d86f6f6400f250d9f4f6b4c1945fcd35"
   integrity sha1-ICl+idhvb2QA8lDZ9Pa0wZRfzTU=
 
-news-crawler@^1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/news-crawler/-/news-crawler-1.0.9.tgz#9f9f9db3e4b7d0c6808cfef88ae4a7bbc8addc46"
-  integrity sha512-Yb+vBlTOdH0jgfKmG9DrpItAYLDXAlUw+ZpgDiqEJO/Gx+U0o5FGgzeBwu86L1oTtgsEbA6qpBYiS5z+Z//lkA==
+news-crawler@^1.11.1:
+  version "1.11.1"
+  resolved "https://devtools.devergage.com:4873/news-crawler/-/news-crawler-1.11.1.tgz#88f45b4c7882973328c158088466e22c5b534640"
+  integrity sha512-RTaw3xdQYDhACmYHNxnNQByFSCuWwIiqzBmWYZICXxpwhE8tl0LlPXbKP4JwWr833LIa3+PVu24gmyCCKeeFTw==
   dependencies:
     html-to-text "^5.1.1"
     puppeteer "5.3.0"
