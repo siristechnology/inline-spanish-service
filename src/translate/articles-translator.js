@@ -1,7 +1,7 @@
 const GoogleTranslator = require('./google-translator')
 
 module.exports = {
-	translateArticles: async function(articles) {
+	translateArticles: async function (articles) {
 		for (const article of articles) {
 			const shortenedText = article.contentText.slice(0, 1000)
 

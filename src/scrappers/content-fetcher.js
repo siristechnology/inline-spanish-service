@@ -4,7 +4,7 @@ module.exports = {
 	fetchArticles: async function (maxArticlesPerPage) {
 		const SourceConfig = require('../scrappers/config/source-configs.json')
 
-		const articles = await NewsCrawler(SourceConfig, {
+		const articles = await NewsCrawler(SourceConfig.slice(0, 1), {
 			maxArticlesPerPage,
 			articleUrlLength: maxArticlesPerPage,
 			headless: true

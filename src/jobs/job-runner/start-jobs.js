@@ -1,8 +1,8 @@
 require('dotenv').config()
-const crawler = require('../../spanilla-crawler/index')
-const translator = require('../../spanilla-translator/index')
+const crawler = require('../../../spanilla-crawler/index')
+const translator = require('../../../spanilla-translator/index')
 const Agenda = require('agenda')
-const Logger = require('../config/logger')
+const Logger = require('../../config/logger')
 
 module.exports = async function () {
 	Logger.info('starting jobs')

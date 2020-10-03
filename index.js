@@ -8,7 +8,6 @@ const requireGraphQLFile = require('require-graphql-file')
 const Bearer = require('@bearer/node-agent')
 
 const resolvers = require('./src/graphql/resolvers.js')
-const startJobs = require('./src/task-runner/start-jobs')
 const logger = require('./src/config/logger')
 
 const isDevelopment = process.env.NODE_ENV === 'development'
@@ -18,8 +17,6 @@ Bearer.init({
 	stripSensitiveData: true,
 	environment: process.env.BEARER_SH_ENV || process.env.NODE_ENV
 })
-
-if (process.env.START_JOBS !== 'false') startJobs()
 
 const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
