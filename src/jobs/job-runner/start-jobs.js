@@ -1,6 +1,6 @@
 require('dotenv').config()
-const crawler = require('../../../spanilla-crawler/index')
-const translator = require('../../../spanilla-translator/index')
+const crawler = require('../news-crawler')
+const translator = require('../google-translator')
 const Agenda = require('agenda')
 const Logger = require('../../config/logger')
 
