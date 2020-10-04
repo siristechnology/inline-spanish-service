@@ -1,10 +1,11 @@
 const SpanillaCrawler = require('../index')
-const ContentFetcher = require('../../src/scrappers/content-fetcher')
-const articleDbService = require('../../src/db-service/article-db-service')
+const ContentFetcher = require('../../../scrappers/content-fetcher')
+const articleDbService = require('../../../db-service/article-db-service')
+
 require('mongoose')
 
-jest.mock('../../src/scrappers/content-fetcher')
-jest.mock('../../src/db-service/article-db-service')
+jest.mock('../../../scrappers/content-fetcher')
+jest.mock('../../../db-service/article-db-service')
 jest.mock('mongoose')
 
 describe('spanilla-crawler unit', () => {
