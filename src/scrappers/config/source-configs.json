@@ -40,7 +40,7 @@
 		"article-detail-selectors": {
 			"title": "article section div > h1:nth-child(1)",
 			"excerpt": "article section div h2:nth-child(2)",
-			"lead-image": "article section figure img",
+			"lead-image": "article section figure img[srcset]",
 			"content": ["article section"]
 		}
 	},
