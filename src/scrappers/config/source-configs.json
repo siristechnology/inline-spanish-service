@@ -3,7 +3,6 @@
 		"name": "cnn",
 		"sourceName": "cnn",
 		"logoLink": "/assets/logos/cnn.png",
-		"category": "news",
 		"pages": [
 			{
 				"url": "https://www.cnn.com/us",
@@ -32,24 +31,25 @@
 		"name": "medium",
 		"sourceName": "medium",
 		"logoLink": "/assets/logos/medium.png",
-		"category": "dev",
 		"pages": [
 			{
 				"url": "https://medium.com/topic/popular",
+				"category": "dev",
 				"link-selector": [
 					"#root section section div h3 > a"
 				]
 			},
 			{
 				"url": "https://medium.com/better-programming",
+				"category": "dev",
 				"link-selector": [
 					"div > section a"
 				]
 			}
 		],
 		"article-detail-selectors": {
-			"title": "article section div > h1:nth-child(1)",
-			"excerpt": "article section div h2:nth-child(2)",
+			"title": "article section div > h1",
+			"excerpt": "article section div h2",
 			"lead-image": "article section figure img[srcset]",
 			"content": [
 				"article section"
@@ -60,10 +60,10 @@
 		"name": "bbc",
 		"sourceName": "bbc",
 		"logoLink": "/assets/logos/bbc.png",
-		"category": "news",
 		"pages": [
 			{
 				"url": "https://www.bbc.com",
+				"category": "news",
 				"link-selector": [
 					".module--promo ul > li h3 > a"
 				]
