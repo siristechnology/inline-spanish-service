@@ -2,6 +2,7 @@
 	{
 		"name": "cnn",
 		"sourceName": "cnn",
+		"category": "news",
 		"logoLink": "/assets/logos/cnn.png",
 		"pages": [
 			{
@@ -30,6 +31,7 @@
 	{
 		"name": "medium",
 		"sourceName": "medium",
+		"category": "dev",
 		"logoLink": "/assets/logos/medium.png",
 		"pages": [
 			{
@@ -59,6 +61,7 @@
 	{
 		"name": "bbc",
 		"sourceName": "bbc",
+		"category": "news",
 		"logoLink": "/assets/logos/bbc.png",
 		"pages": [
 			{

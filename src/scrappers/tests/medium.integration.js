@@ -13,8 +13,6 @@ describe('content-fetcher', () => {
 			headless: true
 		})
 
-		console.log('printing articles', articles)
-
 		expect(articles.length).toBeGreaterThan(0)
 	})
 })

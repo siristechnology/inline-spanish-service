@@ -13,6 +13,7 @@ const Article = mongoose.model(
 		translated_content: { type: [String], required: true },
 		likes: Number,
 		source: String,
+		category: String,
 		author: String,
 		status: String,
 		date_published: { type: Date, default: Date.now },
