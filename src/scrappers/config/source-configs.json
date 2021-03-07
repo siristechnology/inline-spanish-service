@@ -8,18 +8,24 @@
 			{
 				"url": "https://www.cnn.com/us",
 				"category": "news",
-				"link-selector": ["section:nth-of-type(1) ul li article h3 a"]
+				"link-selector": [
+					"section:nth-of-type(1) ul li article h3 a"
+				]
 			},
 			{
 				"url": "https://www.cnn.com/world",
-				"link-selector": ["section:nth-of-type(1) ul li article h3 a"]
+				"link-selector": [
+					"section:nth-of-type(1) ul li article h3 a"
+				]
 			}
 		],
 		"article-detail-selectors": {
 			"title": "article h1.pg-headline",
 			"excerpt": "article #body-text p:nth-of-type(1)",
 			"lead-image": "article section#large-media img:nth-of-type(1)",
-			"content": ["article #body-text"]
+			"content": [
+				"article #body-text"
+			]
 		}
 	},
 	{
@@ -30,18 +36,24 @@
 		"pages": [
 			{
 				"url": "https://medium.com/topic/popular",
-				"link-selector": ["#root section section div h3 > a"]
+				"link-selector": [
+					"#root section section div h3 > a"
+				]
 			},
 			{
 				"url": "https://medium.com/better-programming",
-				"link-selector": ["div > section a"]
+				"link-selector": [
+					"div > section a"
+				]
 			}
 		],
 		"article-detail-selectors": {
 			"title": "article section div > h1:nth-child(1)",
 			"excerpt": "article section div h2:nth-child(2)",
 			"lead-image": "article section figure img[srcset]",
-			"content": ["article section"]
+			"content": [
+				"article section"
+			]
 		}
 	},
 	{
@@ -52,14 +64,18 @@
 		"pages": [
 			{
 				"url": "https://www.bbc.com",
-				"link-selector": [".module--promo ul > li h3 > a"]
+				"link-selector": [
+					".module--promo ul > li h3 > a"
+				]
 			}
 		],
 		"article-detail-selectors": {
-			"title": ".story-body__h1",
-			"excerpt": ".story-body__introduction",
-			"lead-image": "#page .story-body .story-body__inner figure:nth-of-type(1) img:nth-of-type(1)",
-			"content": [".story-body .story-body__inner"]
+			"title": ".article-headline > .article-headline__text",
+			"excerpt": ".article__container article > .article__body-content > div.article__intro.b-font-family-serif",
+			"lead-image": ".hero-image > picture > img",
+			"content": [
+				".article__container article > .article__body-content"
+			]
 		}
 	}
 ]
