@@ -73,11 +73,11 @@
 			}
 		],
 		"article-detail-selectors": {
-			"title": ".article-headline > .article-headline__text",
-			"excerpt": ".article__container article > .article__body-content > div.article__intro.b-font-family-serif",
-			"lead-image": ".hero-image > picture > img",
+			"title": "#main-heading",
+			"excerpt": "#main-content article div > p > b",
+			"lead-image": "#main-content figure > div > span > span > img",
 			"content": [
-				".article__container article > .article__body-content"
+				"#main-content article"
 			]
 		}
 	}

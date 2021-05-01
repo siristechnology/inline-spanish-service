@@ -4,7 +4,7 @@ jest.setTimeout(60000)
 
 describe('content-fetcher', () => {
 	it('fetchArticles should fetch articles successfully', async () => {
-		const { articles } = await ContentFetcher.fetchArticles()
+		const { articles } = await ContentFetcher.fetchArticles(3)
 
 		console.log('printing articles', articles)
 
